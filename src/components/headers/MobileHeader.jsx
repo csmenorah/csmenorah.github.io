@@ -8,6 +8,7 @@ import { openCart } from "@/utlis/openCart";
 import MobileNav from "./components/MobileNav";
 import { useContextElement } from "@/context/Context";
 import { userSignOut } from "../../../firebase/firebaseUtils";
+import { Link } from "react-router-dom";
 
 export default function MobileHeader() {
   const [scrollDirection, setScrollDirection] = useState("down");
@@ -65,7 +66,7 @@ export default function MobileHeader() {
         </a>
 
         <div className="logo">
-          <a to="/">
+          <Link to="/">
             <img
               src="/assets/images/logos/android-chrome-192x192-1.png"
               width={112}
@@ -73,7 +74,7 @@ export default function MobileHeader() {
               alt="Uomo"
               className="logo__image d-block"
             />
-          </a>
+          </Link>
         </div>
         {/* <!-- /.logo --> */}
         {currentUserDetails.displayName && (
@@ -96,10 +97,10 @@ export default function MobileHeader() {
                 <CartLength />
               </span>
             </a>
-            <a
+            <Link
               onClick={() => userSignOut()}
               className="header-tools__item header-tools__cart js-open-aside"
-              href="/"
+              to="/"
             >
               <svg
                 className="d-block"
@@ -111,13 +112,13 @@ export default function MobileHeader() {
               >
                 <use href="#icon_logout" />
               </svg>
-            </a>
+            </Link>
           </>
         )}
         {!currentUserDetails.displayName && (
-          <a
+          <Link
             className="header-tools__item header-tools__cart js-open-aside"
-            href="/mobile-login"
+            to="/mobile-login"
           >
             <svg
               className="d-block"
@@ -129,7 +130,7 @@ export default function MobileHeader() {
             >
               <use href="#icon_login" />
             </svg>
-          </a>
+          </Link>
         )}
       </div>
       {/* <!-- /.container --> */}
