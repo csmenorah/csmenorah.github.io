@@ -359,23 +359,33 @@ export default function Registration() {
                 </div>
               </div>
               <button
+                style={{
+                  marginBottom: "30px",
+                  borderColor: "#f2f2f2",
+                  borderRadius: "50px",
+                  borderWidth: "3px",
+                }}
                 className="btn btn-primary w-100 text-uppercase"
                 type="submit"
-                style={{ marginBottom: "30px" }}
               >
                 SignUp
               </button>
-
               <button
-                className="btn btn-primary w-100 text-uppercase"
-                type="button"
                 onClick={() => {
                   signInWithGoogle().then(() => {
-                    reRoute('/')
+                    reRoute("/");
                   });
                 }}
+                className="btn btn-primary w-100 text-uppercase"
+                type="button"
+                style={{
+                  backgroundColor: "#DB4437",
+                  borderColor: "#ffe6e6",
+                  borderRadius: "50px",
+                  borderWidth: "3px",
+                }}
               >
-                SignIn With Google
+                signin with google
               </button>
             </form>
           </div>

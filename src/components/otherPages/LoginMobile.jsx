@@ -172,7 +172,10 @@ export default function LoginMobile() {
           <div className="login-form">
             <form
               onSubmit={(e) => {
-                e.preventDefault(), handleSubmit();
+                e.preventDefault();
+                handleSubmit().then(() => {
+                  reRoute("/");
+                });
               }}
               className="needs-validation"
             >
@@ -224,7 +227,12 @@ export default function LoginMobile() {
               <button
                 className="btn btn-primary w-100 text-uppercase"
                 type="submit"
-                style={{ marginBottom: "30px" }}
+                style={{
+                  marginBottom: "30px",
+                  borderColor: "#f2f2f2",
+                  borderRadius: "50px",
+                  borderWidth: "3px",
+                }}
               >
                 Log In
               </button>
@@ -238,6 +246,12 @@ export default function LoginMobile() {
                     setPassword("");
                     setVeryLogin("");
                   });
+                }}
+                style={{
+                  backgroundColor: "#DB4437",
+                  borderColor: "#ffe6e6",
+                  borderRadius: "50px",
+                  borderWidth: "3px",
                 }}
               >
                 SignIn With Google

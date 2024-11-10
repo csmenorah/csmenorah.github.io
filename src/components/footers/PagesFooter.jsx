@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { currencyOptions, languageOptions, socialLinks } from "@/data/footer";
+import { useContextElement } from "@/context/Context";
 
 export default function PagesFooter() {
+  const { currentUserDetails } = useContextElement();
   return (
     <footer className="footer footer_type_1 dark theme-bg-color">
       <div className="footer-top container">
@@ -41,19 +43,23 @@ export default function PagesFooter() {
               Returns Policy
             </Link>
           </li>
-          <li className="sub-menu__item">
-            <Link
-              to="/shop_order_tracking"
-              className="menu-link menu-link_us-s"
-            >
-              Track Your Order
-            </Link>
-          </li>
-          <li className="sub-menu__item">
-            <Link to="/about" className="menu-link menu-link_us-s">
-              Shipping & Delivery
-            </Link>
-          </li>
+          {currentUserDetails.displayName &&
+            <>
+              <li className="sub-menu__item">
+                <Link
+                  to="/shop_order_tracking"
+                  className="menu-link menu-link_us-s"
+                >
+                  Track Your Order
+                </Link>
+              </li>
+              <li className="sub-menu__item">
+                <Link to="/about" className="menu-link menu-link_us-s">
+                  Shipping & Delivery
+                </Link>
+              </li>
+            </>
+          }
         </ul>
 
         <ul className="social-links list-unstyled d-flex flex-wrap mb-0 align-items-center justify-content-center">

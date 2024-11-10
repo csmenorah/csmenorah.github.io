@@ -206,7 +206,12 @@ export default function CustomerLogin() {
             <button
               className="btn btn-primary w-100 text-uppercase"
               type="submit"
-              style={{ marginBottom: "0rem" }}
+              style={{
+                marginBottom: "0rem",
+                borderColor: "#f2f2f2",
+                borderRadius: "50px",
+                borderWidth: "3px",
+              }}
             >
               Log In
             </button>
@@ -221,6 +226,12 @@ export default function CustomerLogin() {
               }}
               className="btn btn-primary w-100 text-uppercase"
               type="button"
+              style={{
+                backgroundColor: "#DB4437",
+                borderColor: "#ffe6e6",
+                borderRadius: "50px",
+                borderWidth: "3px",
+              }}
             >
               signin with google
             </button>

@@ -49,34 +49,46 @@ import HomePage19 from "./pages/homes/Classic Clothings";
 import HomePage20 from "./pages/homes/Coporate Wears";
 import HomePage21 from "./pages/homes/Africa Wears";
 import HomePage22 from "./pages/homes/Other Electronics";
-import ShopPage1 from "./pages/shoplist/shop-1";
-import ShopPage2 from "./pages/shoplist/shop-2";
-import ShopPage3 from "./pages/shoplist/shop-3";
-import ShopPage4 from "./pages/shoplist/shop-4";
-import ShopPage5 from "./pages/shoplist/shop-5";
-import ShopPage6 from "./pages/shoplist/shop-6";
-import ShopPage7 from "./pages/shoplist/shop-7";
-import ShopPage8 from "./pages/shoplist/shop-8";
-import ShopPage9 from "./pages/shoplist/shop-9";
-import ShopPage10 from "./pages/shoplist/shop-10";
-import ShopPage11 from "./pages/shoplist/shop-11";
-import ShopPage12 from "./pages/shoplist/shop-12";
-import ProductDetailsPage2 from "./pages/shopSingle/product2_variable/[id]";
-import ProductDetailsPage7 from "./pages/shopSingle/product7_v2/[id]";
-import ProductDetailsPage8 from "./pages/shopSingle/product8_v3/[id]";
-import ProductDetailsPage9 from "./pages/shopSingle/product9_v4/[id]";
-import ProductDetailsPage10 from "./pages/shopSingle/product10_v5/[id]";
-import ProductDetailsPage11 from "./pages/shopSingle/product11_v6/[id]";
-import ProductDetailsPage12 from "./pages/shopSingle/product12_v7/[id]";
-import ProductDetailsPage13 from "./pages/shopSingle/product13_v8/[id]";
-import ProductDetailsPage14 from "./pages/shopSingle/product14_v9/[id]";
-import ProductDetailsPage15 from "./pages/shopSingle/product15_v10/[id]";
-import ProductDetailsPage16 from "./pages/shopSingle/product16_v11/[id]";
-import ProductDetailsPage1 from "./pages/shopSingle/product1_simple/[id]";
-import ProductDetailsPage3 from "./pages/shopSingle/product3_external/[id]";
-import ProductDetailsPage4 from "./pages/shopSingle/product4_grouped/[id]";
-import ProductDetailsPage5 from "./pages/shopSingle/product5_onsale/[id]";
-import ProductDetailsPage6 from "./pages/shopSingle/product6_outofstock/[id]";
+import FemaleClothings from "./pages/shoplist/female-clothings";
+import ShopPage2 from "./pages/shoplist/men-clothings";
+import ShopPage3 from "./pages/shoplist/children-clothings";
+import ShopPage4 from "./pages/shoplist/classic-dresses";
+import ShopPage5 from "./pages/shoplist/coporate-dressing";
+import ShopPage6 from "./pages/shoplist/african-wear-shop";
+import ShopPage7 from "./pages/shoplist/sports-gear-shop";
+import ShopPage8 from "./pages/shoplist/hand-bags-shop";
+import ShopPage9 from "./pages/shoplist/shoes-shop";
+import ShopPage10 from "./pages/shoplist/skin-care-shop";
+import ShopPage11 from "./pages/shoplist/eye-glasses-shop";
+import ShopPage12 from "./pages/shoplist/jewelries-shop";
+import ShopPage13 from "./pages/shoplist/jewelries-shop";
+import ShopPage14 from "./pages/shoplist/watches-shop";
+import ShopPage15 from "./pages/shoplist/cars-&-moto-bike-shop";
+import ShopPage17 from "./pages/shoplist/phone-&-computers-shop";
+import ShopPage18 from "./pages/shoplist/headphones-shop";
+import ShopPage19 from "./pages/shoplist/other-electronics-shop";
+import ShopPage20 from "./pages/shoplist/bicycle-shop";
+import ShopPage16 from "./pages/shoplist/tv-&-radio-shop";
+import ShopPage21 from "./pages/shoplist/kids-toy-shop";
+import ShopPage22 from "./pages/shoplist/video-games-shop";
+import ShopPage23 from "./pages/shoplist/kitchen-utensils-shop";
+import ShopPage24 from "./pages/shoplist/house-whole-funitures-shop";
+import ProductDetailsPage2 from "./pages/product-details/product2_variable/[id]";
+import ProductDetailsPage7 from "./pages/product-details/product7_v2/[id]";
+import ProductDetailsPage8 from "./pages/product-details/product8_v3/[id]";
+import ProductDetailsPage9 from "./pages/product-details/product9_v4/[id]";
+import ProductDetailsPage10 from "./pages/product-details/product10_v5/[id]";
+import ProductDetailsPage11 from "./pages/product-details/product11_v6/[id]";
+import ProductDetailsPage12 from "./pages/product-details/product12_v7/[id]";
+import ProductDetailsPage13 from "./pages/product-details/product13_v8/[id]";
+import ProductDetailsPage14 from "./pages/product-details/product14_v9/[id]";
+import ProductDetailsPage15 from "./pages/product-details/product15_v10/[id]";
+import ProductDetailsPage16 from "./pages/product-details/product16_v11/[id]";
+import ClothDetail from "./pages/product-details/clothings/[id]";
+import ProductDetailsPage3 from "./pages/product-details/product3_external/[id]";
+import ProductDetailsPage4 from "./pages/product-details/product4_grouped/[id]";
+import ProductDetailsPage5 from "./pages/product-details/product5_onsale/[id]";
+import ProductDetailsPage6 from "./pages/product-details/product6_outofstock/[id]";
 import ShopCartPage from "./pages/shop-cart-checkout/shop_cart";
 import ShopCheckoutPage from "./pages/shop-cart-checkout/shop_checkout";
 import ShopOrderConplate from "./pages/shop-cart-checkout/shop_order_complete";
@@ -86,7 +98,6 @@ import ShopOrderTrackingPage from "./pages/shop-cart-checkout/shop_order_trackin
 // import BlogPage3 from "./pages/blogs/blog_list3";
 // import BlogDetailsPage from "./pages/blogs/blog_single/[id]";
 import AccountPage from "./pages/dashboard/account_dashboard";
-import LoginPage from "./pages/otherPages/login_mobile";
 import StoreLocationPage from "./pages/otherPages/store_location";
 import LookbookPage from "./pages/otherPages/lookbook";
 import FaqPage from "./pages/otherPages/faq";
@@ -134,42 +145,57 @@ function App() {
           <Route path="/">
             <Route index element={<HomePage />} />
             <Route path="home" element={<HomePage />} />
-            <Route path="female-clothings" element={<HomePage2 />} />
-            <Route path="men-clothings" element={<HomePage3 />} />
-            <Route path="kids-clothings" element={<HomePage4 />} />
-            <Route path="phones-&-computers" element={<HomePage5 />} />
-            <Route path="cars-&-motobikes" element={<HomePage6 />} />
-            <Route path="tv-&-radios" element={<HomePage7 />} />
-            <Route path="kids-toys" element={<HomePage8 />} />
-            <Route path="house-whole-funitures" element={<HomePage9 />} />
-            <Route path="sport-gears" element={<HomePage10 />} />
-            <Route path="video-games" element={<HomePage11 />} />
-            <Route path="skin-care" element={<HomePage12 />} />
-            <Route path="eye-glasses" element={<HomePage13 />} />
-            <Route path="jeweries" element={<HomePage14 />} />
-            <Route path="kitchen-utensils" element={<HomePage15 />} />
-            <Route path="bicycles" element={<HomePage16 />} />
-            <Route path="sheos" element={<HomePage17 />} />
-            <Route path="watches" element={<HomePage23 />} />
-            <Route path="classic-clothings" element={<HomePage18 />} />
-            <Route path="coporate-wears" element={<HomePage19 />} />
-            <Route path="african-wears" element={<HomePage20 />} />
-            <Route path="other-electronics" element={<HomePage21 />} />
-            <Route path="headphones" element={<HomePage22 />} />
-            <Route path="hand-bags" element={<HomePage24 />} />
+            <Route path="female-clothings-display" element={<HomePage2 />} />
+            <Route path="men-clothings-display" element={<HomePage3 />} />
+            <Route path="kids-clothings-display" element={<HomePage4 />} />
+            <Route path="phones-&-computers-display" element={<HomePage5 />} />
+            <Route path="cars-&-motobikes-display" element={<HomePage6 />} />
+            <Route path="tv-&-radios-display" element={<HomePage7 />} />
+            <Route path="kids-toys-display" element={<HomePage8 />} />
+            <Route
+              path="house-whole-funitures-display"
+              element={<HomePage9 />}
+            />
+            <Route path="sport-gears-display" element={<HomePage10 />} />
+            <Route path="video-games-display" element={<HomePage11 />} />
+            <Route path="skin-care-display" element={<HomePage12 />} />
+            <Route path="eye-glasses-display" element={<HomePage13 />} />
+            <Route path="jeweries-display" element={<HomePage14 />} />
+            <Route path="kitchen-utensils-display" element={<HomePage15 />} />
+            <Route path="bicycles-display" element={<HomePage16 />} />
+            <Route path="sheos-display" element={<HomePage17 />} />
+            <Route path="watches-display" element={<HomePage23 />} />
+            <Route path="classic-clothings-display" element={<HomePage18 />} />
+            <Route path="coporate-wears-display" element={<HomePage19 />} />
+            <Route path="african-wears-display" element={<HomePage20 />} />
+            <Route path="other-electronics-display" element={<HomePage21 />} />
+            <Route path="headphones-display" element={<HomePage22 />} />
+            <Route path="hand-bags-display" element={<HomePage24 />} />
 
-            <Route path="shop-1" element={<ShopPage1 />} />
-            <Route path="shop-2" element={<ShopPage2 />} />
-            <Route path="shop-3" element={<ShopPage3 />} />
-            <Route path="shop-4" element={<ShopPage4 />} />
-            <Route path="shop-5" element={<ShopPage5 />} />
-            <Route path="shop-6" element={<ShopPage6 />} />
-            <Route path="shop-7" element={<ShopPage7 />} />
-            <Route path="shop-8" element={<ShopPage8 />} />
-            <Route path="shop-9" element={<ShopPage9 />} />
+            <Route path="female-clothings-shop" element={<FemaleClothings />} />
+            <Route path="men-clothings-shop" element={<ShopPage2 />} />
+            <Route path="children-clothings-shop" element={<ShopPage3 />} />
+            <Route path="classic-dressing-shop" element={<ShopPage4 />} />
+            <Route path="coporate-dressing-shop" element={<ShopPage5 />} />
+            <Route path="african-wear-shop" element={<ShopPage6 />} />
+            <Route path="sports-gear-shop" element={<ShopPage7 />} />
+            <Route path="hand-bags-shop" element={<ShopPage8 />} />
+            <Route path="shoes-shop" element={<ShopPage9 />} />
             <Route path="top-salers-all" element={<ShopPage10 />} />
-            <Route path="shop-11" element={<ShopPage11 />} />
-            <Route path="shop-12" element={<ShopPage12 />} />
+            <Route path="skin-care-shop" element={<ShopPage11 />} />
+            <Route path="eye-glasses-shop" element={<ShopPage12 />} />
+            <Route path="jewelries-shop" element={<ShopPage13 />} />
+            <Route path="watches-shop" element={<ShopPage14 />} />
+            <Route path="cars-&-moto-bike-shop" element={<ShopPage15 />} />
+            <Route path="tv-&-radio-shop" element={<ShopPage16 />} />
+            <Route path="phone-&-computers-shop" element={<ShopPage17 />} />
+            <Route path="headphones-shop" element={<ShopPage18 />} />
+            <Route path="other-electronics-shop" element={<ShopPage19 />} />
+            <Route path="bicycle-shop" element={<ShopPage20 />} />
+            <Route path="kids-toy-shop" element={<ShopPage21 />} />
+            <Route path="video-games-shop" element={<ShopPage22 />} />
+            <Route path="kitchen-utensils-shop" element={<ShopPage23 />} />
+            <Route path="house-whole-funitures-shop" element={<ShopPage24 />} />
 
             <Route
               path="product2_variable/:id"
@@ -191,10 +217,7 @@ function App() {
               path="product16_v11/:id"
               element={<ProductDetailsPage16 />}
             />
-            <Route
-              path="product1_simple/:id"
-              element={<ProductDetailsPage1 />}
-            />
+            <Route path="clothing-detail/:id" element={<ClothDetail />} />
 
             <Route
               path="product3_external/:id"
@@ -268,9 +291,7 @@ function App() {
             <Route path="reset_password" element={<ResetPasswordPage />} />
             <Route
               path="registration"
-              element={
-                !currentUserExist ? <RegistrationPage />: <NotFound/> 
-              }
+              element={!currentUserExist ? <RegistrationPage /> : <NotFound />}
             />
             <Route
               path="mobile-login"

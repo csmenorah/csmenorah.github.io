@@ -10,7 +10,7 @@ const metadata = {
   title: "Shop Single 1 || Uomo eCommerce Reactjs Template",
   description: "Uomo eCommerce Reactjs Template",
 };
-export default function ProductDetailsPage1() {
+export default function ClothDetail() {
   let params = useParams();
   const productId = params.id;
   const product =
