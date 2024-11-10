@@ -9,10 +9,12 @@ import MobileNav from "./components/MobileNav";
 import { useContextElement } from "@/context/Context";
 import { userSignOut } from "../../../firebase/firebaseUtils";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function MobileHeader() {
   const [scrollDirection, setScrollDirection] = useState("down");
   const { currentUserDetails } = useContextElement();
+  const reRoute = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -98,7 +100,7 @@ export default function MobileHeader() {
               </span>
             </a>
             <Link
-              onClick={() => userSignOut()}
+              onClick={() => { userSignOut();  reRoute('/')}}
               className="header-tools__item header-tools__cart js-open-aside"
               to="/"
             >
