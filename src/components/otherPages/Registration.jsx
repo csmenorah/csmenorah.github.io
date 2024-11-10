@@ -360,7 +360,7 @@ export default function Registration() {
               </div>
               <button
                 style={{
-                  marginBottom: "30px",
+                  marginBottom: "5px",
                   borderColor: "#f2f2f2",
                   borderRadius: "50px",
                   borderWidth: "3px",
@@ -370,6 +370,7 @@ export default function Registration() {
               >
                 SignUp
               </button>
+              <hr />
               <button
                 onClick={() => {
                   signInWithGoogle().then(() => {

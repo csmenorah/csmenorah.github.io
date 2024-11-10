@@ -228,7 +228,7 @@ export default function LoginMobile() {
                 className="btn btn-primary w-100 text-uppercase"
                 type="submit"
                 style={{
-                  marginBottom: "30px",
+                  marginBottom: "5px",
                   borderColor: "#f2f2f2",
                   borderRadius: "50px",
                   borderWidth: "3px",
@@ -236,7 +236,7 @@ export default function LoginMobile() {
               >
                 Log In
               </button>
-
+              <hr />
               <button
                 className="btn btn-primary w-100 text-uppercase"
                 type="submit"
