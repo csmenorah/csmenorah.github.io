@@ -107,7 +107,7 @@ export default function LoginMobile() {
              setEmailOrName("");
              setPassword("");
              setVeryLogin("");
-             closeModalUserlogin();
+             reRoute('/');
            }
          );
        }
