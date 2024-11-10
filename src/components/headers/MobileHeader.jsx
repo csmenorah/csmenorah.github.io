@@ -100,7 +100,9 @@ export default function MobileHeader() {
               </span>
             </a>
             <Link
-              onClick={() => { userSignOut();  reRoute('/')}}
+              onClick={() => {
+                userSignOut(reRoute("/")).then(() => location.reload());
+              }}
               className="header-tools__item header-tools__cart js-open-aside"
               to="/"
             >

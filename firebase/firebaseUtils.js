@@ -20,7 +20,7 @@ export const signInWithGoogle = async () => {
   await signInWithPopup(auth, provider).then(() => closeModalUserlogin())
 };
 
-export const userSignOut = (redirect) => {
-  signOut(auth);
+export const userSignOut = async (redirect) => {
+  await signOut(auth);
   redirect;
 };
