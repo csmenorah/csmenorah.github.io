@@ -157,7 +157,7 @@ export default function CustomerLogin() {
           </div>
           <form
             onSubmit={(e) => {
-              e.preventDefault(), handleSubmit();
+              e.preventDefault(), handleSubmit().then(() => location.reload());
             }}
             className="aside-content"
           >
@@ -218,11 +218,13 @@ export default function CustomerLogin() {
             <hr />
             <button
               onClick={() => {
-                signInWithGoogle().then(() => {
-                  setEmailOrName("");
-                  setPassword("");
-                  setVeryLogin("");
-                });
+                signInWithGoogle()
+                  .then(() => {
+                    setEmailOrName("");
+                    setPassword("");
+                    setVeryLogin("");
+                  })
+                  .then(() => location.reload());
               }}
               className="btn btn-primary w-100 text-uppercase"
               type="button"

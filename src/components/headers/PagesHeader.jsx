@@ -193,8 +193,7 @@ export default function PagesHeader() {
                         color: "white",
                       }}
                       onClick={() => {
-                        userSignOut();
-                        // reRoute("/");
+                        userSignOut(reRoute("/")).then(() => location.reload());
                       }}
                     >
                       Logout

@@ -5,7 +5,7 @@ import { openModalUserlogin } from "@/utlis/aside";
 import { collection, doc, setDoc, getDoc, getDocs } from "firebase/firestore";
 import {
   validatePassword,
-  createUserWithEmailAndPassword
+  createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { db, auth, signInWithGoogle } from "../../../firebase/firebaseUtils";
 
@@ -37,7 +37,6 @@ export default function Registration() {
   const [checkConPWLower, setCheckConPWLower] = useState("");
   const [checkConPWSpecialChar, setCheckConPWSpecialChar] = useState("");
   const [checkConPWNum, setCheckConPWNum] = useState("");
-  
 
   const reRoute = useNavigate();
 
@@ -207,14 +206,9 @@ export default function Registration() {
       });
       if (userNameExist == false) {
         setCheckUserName("");
-        await setDoc(newUserRef, { ...data }).then(async (value) => {
-            await createUserWithEmailAndPassword(
-              auth,
-              data.email,
-              data.password
-            )
-            reRoute('/')
-            
+        await setDoc(newUserRef, { ...data }).then(async () => {
+          await createUserWithEmailAndPassword(auth, data.email, data.password);
+          reRoute("/");
         });
       }
     }
@@ -243,7 +237,7 @@ export default function Registration() {
                 checkForErrors().then((value) => {
                   console.log(value);
                   if (value == true) {
-                    handleSubmit();
+                    handleSubmit().then(() => location.reload());
                   }
                 });
               }}
@@ -373,9 +367,11 @@ export default function Registration() {
               <hr />
               <button
                 onClick={() => {
-                  signInWithGoogle().then(() => {
-                    reRoute("/");
-                  });
+                  signInWithGoogle()
+                    .then(() => {
+                      reRoute("/");
+                    })
+                    .then(() => location.reload());
                 }}
                 className="btn btn-primary w-100 text-uppercase"
                 type="button"
