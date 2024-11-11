@@ -2,9 +2,9 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function ResetPasswordOk() {
+export default function ConfirmMessage({ img, msg, btnCall }) {
   const modalElement = useRef(null);
-  const reRoute = useNavigate()
+  const reRoute = useNavigate();
 
   useEffect(() => {
     import("bootstrap").then((bootstrap) => {
@@ -17,7 +17,8 @@ export default function ResetPasswordOk() {
 
       myModal.show();
       modalElement.current.addEventListener("hidden.bs.modal", () => {
-        myModal.hide(); reRoute('/mobile-login')
+        myModal.hide();
+        btnCall();
       });
     });
   }, []);
@@ -39,7 +40,7 @@ export default function ResetPasswordOk() {
             data-bs-dismiss="modal"
             aria-label="Close"
             onClick={() => {
-              reRoute("/mobile-login");
+              btnCall();
             }}
           ></button>
           <div className="row p-0 m-0">
@@ -50,7 +51,7 @@ export default function ResetPasswordOk() {
                   height={550}
                   style={{ height: "fit-content" }}
                   loading="lazy"
-                  src="/assets/images/password-reset.jpg"
+                  src={img}
                   className="h-100 w-100 object-fit-cover d-block"
                   alt="image"
                 />
@@ -74,10 +75,7 @@ export default function ResetPasswordOk() {
                     fill="white"
                   />
                 </svg>
-                <h3 style={{fontSize: '20px'}}>
-                  A reset password link has been send to your email. Please
-                  follow the link to change your password
-                </h3>
+                <h3 style={{ fontSize: "20px" }}>{msg}</h3>
                 <p>Thank you</p>
               </div>
             </div>

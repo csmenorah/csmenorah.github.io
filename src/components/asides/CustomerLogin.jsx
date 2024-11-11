@@ -230,7 +230,10 @@ export default function CustomerLogin() {
                     setPassword("");
                     setVeryLogin("");
                   })
-                  .then(() => location.reload());
+                  .then(() => {
+                    reRoute("/");
+                    location.reload();
+                  });
               }}
               className="btn btn-primary w-100 text-uppercase"
               type="button"

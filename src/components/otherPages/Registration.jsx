@@ -1,13 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useContextElement } from "@/context/Context";
 import { openModalUserlogin } from "@/utlis/aside";
 import { collection, doc, setDoc, getDoc, getDocs } from "firebase/firestore";
-import {
-  validatePassword,
-  createUserWithEmailAndPassword,
-} from "firebase/auth";
+import { validatePassword, sendEmailVerification, createUserWithEmailAndPassword } from "firebase/auth";
 import { db, auth, signInWithGoogle } from "../../../firebase/firebaseUtils";
+import ConfirmRegistration from "../modals/ConfirmMessage";
 
 export default function Registration() {
   const [userName, setuserName] = useState("");
@@ -37,8 +34,11 @@ export default function Registration() {
   const [checkConPWLower, setCheckConPWLower] = useState("");
   const [checkConPWSpecialChar, setCheckConPWSpecialChar] = useState("");
   const [checkConPWNum, setCheckConPWNum] = useState("");
-
+  const [showConfirm, setShowConfirm] = useState(false);
   const reRoute = useNavigate();
+
+  const conMsg = `Registration Complete. 
+  A confirmation email link has been send to your email. Please follow the link to validate your registration.`;
 
   const handleShowPW = (value) => {
     value;
@@ -72,6 +72,7 @@ export default function Registration() {
       auth,
       confirmPassword.inputConfPW
     );
+
     if (
       !serverValidationPW.isValid ||
       !serverValidationConPW ||
@@ -206,189 +207,223 @@ export default function Registration() {
       });
       if (userNameExist == false) {
         setCheckUserName("");
-        await setDoc(newUserRef, { ...data }).then(async () => {
-          await createUserWithEmailAndPassword(auth, data.email, data.password);
-          reRoute("/");
-        });
+        await setDoc(newUserRef, { ...data })
+          .then(async () => {
+            setShowConfirm(true);
+            await createUserWithEmailAndPassword(auth, data.email, data.password)
+            reRoute('/')
+            location.reload()
+          })
+          .then(() => {
+            setTerms(false);
+            setuserName("");
+            setEmail("");
+            setPhoneNumber("");
+            setPassword("");
+            setComfirmPassword("");
+          })
+          .then(() => {
+            sendEmailVerification(auth.currentUser)
+            setShowConfirm(true);
+          });
       }
     }
   };
   return (
-    <section className="login-register container">
-      <h2 className="d-none">Login & Register</h2>
-      <ul className="nav nav-tabs mb-5" id="login_register">
-        <li className="nav-item">
-          <a className="nav-link nav-link_underscore" id="register-tab">
-            Register
-          </a>
-        </li>
-      </ul>
-      <div className="tab-content pt-2" id="login_register_tab_content">
-        <div
-          className="tab-pane fade show active"
-          id="tab-item-login"
-          role="tabpanel"
-          aria-labelledby="login-tab"
-        >
-          <div className="login-form">
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                checkForErrors().then((value) => {
-                  if (value == true) {
-                    handleSubmit().then(() => {
-                      if(checkUserEmail.length < 0 && checkUserName.length < 0) location.reload()
-                    });
-                  }
-                });
-              }}
-              className="needs-validation"
-            >
-              <div className="form-floating mb-3">
-                <input
-                  name="userName"
-                  type="text"
-                  className="form-control form-control_gray"
-                  placeholder="User Name *"
-                  value={userName}
-                  onChange={handleInput}
-                  required
-                />
-                <label>User Name</label>
-              </div>
-
-              <div className="form-floating mb-3">
-                <input
-                  name="email"
-                  type="email"
-                  className="form-control form-control_gray"
-                  placeholder="Email address *"
-                  value={email}
-                  onChange={handleInput}
-                  required
-                />
-                <label>Email address *</label>
-              </div>
-              <div className="form-floating mb-3">
-                <input
-                  name="phoneNumber"
-                  type="text"
-                  className="form-control form-control_gray"
-                  placeholder="Phone Number *"
-                  value={phoneNumber}
-                  onChange={handleInput}
-                  required
-                />
-                <label>Phone Number *</label>
-              </div>
-
-              <div className="pb-3"></div>
-
-              <div className="form-floating mb-3">
-                <input
-                  name="password"
-                  type={password.showInputPW ? "text" : "password"}
-                  className="form-control form-control_gray"
-                  id="customerPasswodInput"
-                  placeholder="Password *"
-                  value={password.inputPW}
-                  onChange={handleInput}
-                  required
-                />
-                <label htmlFor="customerPasswodInput">Password *</label>
-              </div>
-
-              <div className="pb-3"></div>
-
-              <div className="form-floating mb-3">
-                <input
-                  name="confirmPassword"
-                  type={confirmPassword.showInputPW ? "text" : "password"}
-                  className="form-control form-control_gray"
-                  id="customerConfirmPasswodInput"
-                  placeholder="Confirm Password *"
-                  value={confirmPassword.inputConfPW}
-                  onChange={handleInput}
-                  required
-                />
-                <label htmlFor="customerPasswodInput">Comfirm Password *</label>
-              </div>
-
-              <ul className="pb-3" style={{ color: "red" }}>
-                {checkboxErr.length > 0 && <li>{checkboxErr}</li>}
-                {passwordDiff.length > 0 && <li>{passwordDiff}</li>}
-                {passwordLes8.length > 0 && <li>{passwordLes8}</li>}
-                {checkPWLower.length > 0 && <li>{checkPWLower}</li>}
-                {checkPWUpper.length > 0 && <li>{checkPWUpper}</li>}
-                {checkPWNum.length > 0 && <li>{checkPWNum}</li>}
-                {checkPWSpecialChar.length > 0 && <li>{checkPWSpecialChar}</li>}
-                {checkConPWLower.length > 0 && <li>{checkConPWLower}</li>}
-                {checkConPWUpper.length > 0 && <li>{checkConPWUpper}</li>}
-                {checkConPWNum.length > 0 && <li>{checkConPWNum}</li>}
-                {checkConPWSpecialChar.length > 0 && (
-                  <li>{checkConPWSpecialChar}</li>
-                )}
-                {conPasswordLes8.length > 0 && <li>{conPasswordLes8}</li>}
-                {checkUserName && <li>{checkUserName}</li>}
-                {checkUserEmail && <li>{checkUserEmail}</li>}
-              </ul>
-
-              <div className="d-flex align-items-left mb-3 pb-2">
-                <div className="form-check mb-0">
+    <>
+      {showConfirm && (
+        <ConfirmRegistration
+          img={"/assets/images/confirm-msg.jpg"}
+          msg={
+            conMsg
+          }
+          btnCall={() => reRoute('/')}
+        />
+      )}
+      <section className="login-register container">
+        <h2 className="d-none">Login & Register</h2>
+        <ul className="nav nav-tabs mb-5" id="login_register">
+          <li className="nav-item">
+            <a className="nav-link nav-link_underscore" id="register-tab">
+              Register
+            </a>
+          </li>
+        </ul>
+        <div className="tab-content pt-2" id="login_register_tab_content">
+          <div
+            className="tab-pane fade show active"
+            id="tab-item-login"
+            role="tabpanel"
+            aria-labelledby="login-tab"
+          >
+            <div className="login-form">
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  checkForErrors().then((value) => {
+                    if (value == true) {
+                      handleSubmit().then(() => {
+                        if (
+                          checkUserEmail.length < 0 &&
+                          checkUserName.length < 0
+                        )
+                          location.reload();
+                      });
+                    }
+                  });
+                }}
+                className="needs-validation"
+              >
+                <div className="form-floating mb-3">
                   <input
-                    name="term"
-                    className="form-check-input form-check-input_fill"
-                    type="checkbox"
-                    checked={terms}
-                    onChange={() => {
-                      setTerms(!terms);
-                    }}
+                    name="userName"
+                    type="text"
+                    className="form-control form-control_gray"
+                    placeholder="User Name *"
+                    value={userName}
+                    onChange={handleInput}
+                    required
                   />
-                  <label className="form-check-label text-secondary">
-                    Please check the box to agree with Brown Commerce privacy
-                    policy. Your personal data will be used to support and
-                    improve your personal experience throughout this website, to
-                    manage access to your account, and for other purposes
-                    described in our privacy policy.
+                  <label>User Name</label>
+                </div>
+
+                <div className="form-floating mb-3">
+                  <input
+                    name="email"
+                    type="email"
+                    className="form-control form-control_gray"
+                    placeholder="Email address *"
+                    value={email}
+                    onChange={handleInput}
+                    required
+                  />
+                  <label>Email address *</label>
+                </div>
+                <div className="form-floating mb-3">
+                  <input
+                    name="phoneNumber"
+                    type="text"
+                    className="form-control form-control_gray"
+                    placeholder="Phone Number *"
+                    value={phoneNumber}
+                    onChange={handleInput}
+                    required
+                  />
+                  <label>Phone Number *</label>
+                </div>
+
+                <div className="pb-3"></div>
+
+                <div className="form-floating mb-3">
+                  <input
+                    name="password"
+                    type={password.showInputPW ? "text" : "password"}
+                    className="form-control form-control_gray"
+                    id="customerPasswodInput"
+                    placeholder="Password *"
+                    value={password.inputPW}
+                    onChange={handleInput}
+                    required
+                  />
+                  <label htmlFor="customerPasswodInput">Password *</label>
+                </div>
+
+                <div className="pb-3"></div>
+
+                <div className="form-floating mb-3">
+                  <input
+                    name="confirmPassword"
+                    type={confirmPassword.showInputPW ? "text" : "password"}
+                    className="form-control form-control_gray"
+                    id="customerConfirmPasswodInput"
+                    placeholder="Confirm Password *"
+                    value={confirmPassword.inputConfPW}
+                    onChange={handleInput}
+                    required
+                  />
+                  <label htmlFor="customerPasswodInput">
+                    Comfirm Password *
                   </label>
                 </div>
-              </div>
-              <button
-                style={{
-                  marginBottom: "5px",
-                  borderColor: "#f2f2f2",
-                  borderRadius: "50px",
-                  borderWidth: "3px",
-                }}
-                className="btn btn-primary w-100 text-uppercase"
-                type="submit"
-              >
-                SignUp
-              </button>
-              <hr />
-              <button
-                onClick={() => {
-                  signInWithGoogle()
-                    .then(() => {
-                      reRoute("/");
-                    })
-                    .then(() => location.reload());
-                }}
-                className="btn btn-primary w-100 text-uppercase"
-                type="button"
-                style={{
-                  backgroundColor: "#DB4437",
-                  borderColor: "#ffe6e6",
-                  borderRadius: "50px",
-                  borderWidth: "3px",
-                }}
-              >
-                signin with google
-              </button>
-            </form>
+
+                <ul className="pb-3" style={{ color: "red" }}>
+                  {checkboxErr.length > 0 && <li>{checkboxErr}</li>}
+                  {passwordDiff.length > 0 && <li>{passwordDiff}</li>}
+                  {passwordLes8.length > 0 && <li>{passwordLes8}</li>}
+                  {checkPWLower.length > 0 && <li>{checkPWLower}</li>}
+                  {checkPWUpper.length > 0 && <li>{checkPWUpper}</li>}
+                  {checkPWNum.length > 0 && <li>{checkPWNum}</li>}
+                  {checkPWSpecialChar.length > 0 && (
+                    <li>{checkPWSpecialChar}</li>
+                  )}
+                  {checkConPWLower.length > 0 && <li>{checkConPWLower}</li>}
+                  {checkConPWUpper.length > 0 && <li>{checkConPWUpper}</li>}
+                  {checkConPWNum.length > 0 && <li>{checkConPWNum}</li>}
+                  {checkConPWSpecialChar.length > 0 && (
+                    <li>{checkConPWSpecialChar}</li>
+                  )}
+                  {conPasswordLes8.length > 0 && <li>{conPasswordLes8}</li>}
+                  {checkUserName && <li>{checkUserName}</li>}
+                  {checkUserEmail && <li>{checkUserEmail}</li>}
+                </ul>
+
+                <div className="d-flex align-items-left mb-3 pb-2">
+                  <div className="form-check mb-0">
+                    <input
+                      name="term"
+                      className="form-check-input form-check-input_fill"
+                      type="checkbox"
+                      checked={terms}
+                      onChange={() => {
+                        setTerms(!terms);
+                      }}
+                    />
+                    <label className="form-check-label text-secondary">
+                      Please check the box to agree with Brown Commerce privacy
+                      policy. Your personal data will be used to support and
+                      improve your personal experience throughout this website,
+                      to manage access to your account, and for other purposes
+                      described in our privacy policy.
+                    </label>
+                  </div>
+                </div>
+                <button
+                  style={{
+                    marginBottom: "5px",
+                    borderColor: "#f2f2f2",
+                    borderRadius: "50px",
+                    borderWidth: "3px",
+                  }}
+                  className="btn btn-primary w-100 text-uppercase"
+                  type="submit"
+                >
+                  SignUp
+                </button>
+                <hr />
+                <button
+                  onClick={() => {
+                    signInWithGoogle()
+                      .then(() => {
+                        reRoute("/");
+                      })
+                      .then(() => location.reload());
+                  }}
+                  className="btn btn-primary w-100 text-uppercase"
+                  type="button"
+                  style={{
+                    backgroundColor: "#DB4437",
+                    borderColor: "#ffe6e6",
+                    borderRadius: "50px",
+                    borderWidth: "3px",
+                  }}
+                >
+                  signin with google
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
