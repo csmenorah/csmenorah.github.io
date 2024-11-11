@@ -38,6 +38,7 @@ export default function Context({ children }) {
 
   useEffect(() => {
     auth.onAuthStateChanged(async (userAuth) => {
+      console.log(userAuth)
       if (!userAuth)
         setCurrentUserDetails(() => {
           return { ...initialUserState };

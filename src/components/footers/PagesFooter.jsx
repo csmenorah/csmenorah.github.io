@@ -11,9 +11,9 @@ export default function PagesFooter() {
           <h3 className="block__title text-uppercase text-white fs-30 fw-semi-bold mb-2">
             Subscribe to our newsletter
           </h3>
-          <p className="mb-4">
-            Be the first to get the latest news about trends, promotions, and
-            much more!
+          <p>
+            Be the first to get the latest news from <b>Brown Commerce</b> in
+            regards to <b>Promotions</b>, <b>New Sales</b> and <b>much more!</b>
           </p>
 
           <div className="mb-2 pb-1"></div>
@@ -43,7 +43,7 @@ export default function PagesFooter() {
               Returns Policy
             </Link>
           </li>
-          {currentUserDetails.displayName &&
+          {currentUserDetails.displayName && (
             <>
               <li className="sub-menu__item">
                 <Link
@@ -59,7 +59,7 @@ export default function PagesFooter() {
                 </Link>
               </li>
             </>
-          }
+          )}
         </ul>
 
         <ul className="social-links list-unstyled d-flex flex-wrap mb-0 align-items-center justify-content-center">

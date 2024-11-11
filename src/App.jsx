@@ -117,6 +117,7 @@ import { auth } from "../firebase/firebaseUtils";
 import { Navigate } from "react-router-dom";
 import HomePage24 from "./pages/homes/Hand Bags";
 import HomePage23 from "./pages/homes/Watches";
+import ConfirmResetPasswordPage from "./pages/otherPages/confirm-reset-password";
 // import AdminDashboard from "./AdminConsole/layout/adminDashboard";
 // import { AdminAppContent } from "./AdminConsole/components";
 // import AdminConsole from "./AdminConsole/AdminConsole";
@@ -133,6 +134,7 @@ function App() {
   }, []);
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
+      console.log(authUser);
       if (authUser) setCurrentUserExist(true);
     });
   }, []);
@@ -209,6 +211,7 @@ function App() {
             <Route path="product12_v7/:id" element={<ProductDetailsPage12 />} />
             <Route path="product13_v8/:id" element={<ProductDetailsPage13 />} />
             <Route path="product14_v9/:id" element={<ProductDetailsPage14 />} />
+
             <Route
               path="product15_v10/:id"
               element={<ProductDetailsPage15 />}
@@ -288,6 +291,7 @@ function App() {
                 currentUserExist ? <AccountWishlistPage /> : <NotFound />
               }
             />
+            <Route path="new-password-reset/:email" element={<ConfirmResetPasswordPage />} />
             <Route path="reset_password" element={<ResetPasswordPage />} />
             <Route
               path="registration"
@@ -311,7 +315,7 @@ function App() {
         <MobileFooter1 />
         <LoginFormPopup />
         <QuickView />
-        <NewsLetter />
+        {currentUserExist && <NewsLetter />}
         <CookieContainer />
         <SizeGuide />
         <Delivery />

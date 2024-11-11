@@ -196,7 +196,13 @@ export default function CustomerLogin() {
                   Remember me
                 </label>
               </div> */}
-              <Link to="/reset_password" className="btn-text ms-auto">
+              <Link
+                to="/reset_password"
+                className="btn-text ms-auto"
+                onClick={() => {
+                  closeModalUserlogin();
+                }}
+              >
                 Lost password?
               </Link>
             </div>

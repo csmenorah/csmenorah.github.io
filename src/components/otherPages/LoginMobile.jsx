@@ -173,9 +173,11 @@ export default function LoginMobile() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                handleSubmit().then(() => {
-                  reRoute("/");
-                });
+                handleSubmit()
+                  .then(() => {
+                    reRoute("/");
+                  })
+                  .then(() => location.reload());
               }}
               className="needs-validation"
             >
@@ -245,7 +247,7 @@ export default function LoginMobile() {
                     setEmailOrName("");
                     setPassword("");
                     setVeryLogin("");
-                  });
+                  }).then(()=>location.reload());
                 }}
                 style={{
                   backgroundColor: "#DB4437",

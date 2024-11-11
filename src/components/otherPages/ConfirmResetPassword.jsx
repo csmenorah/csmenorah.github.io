@@ -1,18 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useContextElement } from "@/context/Context";
-import { openModalUserlogin } from "@/utlis/aside";
-import { collection, doc, setDoc, getDoc, getDocs } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import {
   validatePassword,
-  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updatePassword,
 } from "firebase/auth";
-import { db, auth, signInWithGoogle } from "../../../firebase/firebaseUtils";
+import { db, auth } from "../../../firebase/firebaseUtils";
+import { useParams } from "react-router-dom";
+import { updateDoc } from "firebase/firestore";
 
-export default function Registration() {
-  const [userName, setuserName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+export default function ConfirmPasswordReset() {
+  let params = useParams();
+  const email = params.email;
   const [password, setPassword] = useState({
     inputPW: "",
     showInputPW: false,
@@ -21,14 +21,10 @@ export default function Registration() {
     inputConfPW: "",
     showInputConfPW: false,
   });
-  const [terms, setTerms] = useState(false);
   const [passwordDiff, setPasswordDiff] = useState("");
   // const [passwordNotLen, setPasswordNotLen] = useState("");
   const [passwordLes8, setPasswordLes8] = useState("");
   const [conPasswordLes8, setConPasswordLes8] = useState("");
-  const [checkboxErr, setCheckBoxErr] = useState("");
-  const [checkUserEmail, setCheckUserEmail] = useState("");
-  const [checkUserName, setCheckUserName] = useState("");
   const [checkPWUpper, setCheckPWUpper] = useState("");
   const [checkPWLower, setCheckPWLower] = useState("");
   const [checkPWSpecialChar, setCheckPWSpecialChar] = useState("");
@@ -40,20 +36,10 @@ export default function Registration() {
 
   const reRoute = useNavigate();
 
-  const handleShowPW = (value) => {
-    value;
-  };
-
   // enter input values
   const handleInput = (e) => {
     const { name, value } = e.target;
-    if (name == "userName") {
-      setuserName(value);
-    } else if (name == "email") {
-      setEmail(value);
-    } else if (name == "phoneNumber") {
-      setPhoneNumber(value);
-    } else if (name == "password") {
+    if (name == "password") {
       setPassword((prev) => {
         return { ...prev, inputPW: value };
       });
@@ -76,8 +62,7 @@ export default function Registration() {
       !serverValidationPW.isValid ||
       !serverValidationConPW ||
       (!serverValidationConPW && !serverValidationPW) ||
-      password.inputPW !== confirmPassword.inputConfPW ||
-      terms == false
+      password.inputPW !== confirmPassword.inputConfPW
     ) {
       // validating password
       serverValidationPW.containsLowercaseLetter !== true &&
@@ -135,13 +120,6 @@ export default function Registration() {
       serverValidationConPW.meetsMinPasswordLength == true &&
         setConPasswordLes8("");
 
-      // validating checkbox
-      terms == false &&
-        setCheckBoxErr(
-          "Please checked the box to agree to our privacy policy."
-        );
-      terms == true && setCheckBoxErr("");
-
       //validating if password and confirm password are the same
       password.inputPW !== confirmPassword.inputConfPW &&
         setPasswordDiff("Password must match confirm password");
@@ -152,8 +130,6 @@ export default function Registration() {
       serverValidationPW.containsLowercaseLetter == true && setCheckPWLower("");
       serverValidationConPW.containsNumericCharacter == true &&
         setCheckConPWNum("");
-      password.inputPW == confirmPassword.inputConfPW && setPasswordDiff("");
-      terms == true && setCheckBoxErr("");
       serverValidationConPW.meetsMinPasswordLength == true &&
         setConPasswordLes8("");
       serverValidationConPW.containsNonAlphanumericCharacter == true &&
@@ -176,50 +152,34 @@ export default function Registration() {
   // handling submit
   const handleSubmit = async function () {
     let data = {
-      date: new Date().toUTCString(),
-      displayName: userName.toUpperCase(),
       email,
-      phoneNumber,
       password: password.inputPW,
-      providerId: "Password",
-      uid: email,
-      photoURL: "",
     };
     //
     let docRef = doc(db, "users", data.email);
-    let docSnap = await getDoc(docRef);
-    let userColRef = collection(db, "users");
-    let newUserRef = doc(userColRef, data.email);
-    if (docSnap.exists()) {
-      setCheckUserEmail("User with Email Exist. Please Login instead");
-      setCheckUserName("");
-      openModalUserlogin();
-    } else {
-      let docSnapShots = await getDocs(collection(db, "users"));
-      let userNameExist = false;
-      docSnapShots.forEach((doc) => {
-        if (doc.data().displayName.toUpperCase() == data.displayName) {
-          setCheckUserEmail("");
-          setCheckUserName("User name exist. Please try another User Name");
-          userNameExist = true;
-        }
-      });
-      if (userNameExist == false) {
-        setCheckUserName("");
-        await setDoc(newUserRef, { ...data }).then(async () => {
-          await createUserWithEmailAndPassword(auth, data.email, data.password);
-          reRoute("/");
+    await getDoc(docRef).then(async (docSnap) => {
+      await signInWithEmailAndPassword(
+        auth,
+        data.email,
+        docSnap.data().password
+      ).then(async () => {
+        const user = auth.currentUser;
+        await updatePassword(user, data.password).then(() => {
+          updateDoc(docRef, {
+            password: data.password,
+          });
         });
-      }
-    }
+      });
+    });
   };
+
   return (
     <section className="login-register container">
       <h2 className="d-none">Login & Register</h2>
       <ul className="nav nav-tabs mb-5" id="login_register">
         <li className="nav-item">
           <a className="nav-link nav-link_underscore" id="register-tab">
-            Register
+            Reset Password
           </a>
         </li>
       </ul>
@@ -236,54 +196,12 @@ export default function Registration() {
                 e.preventDefault();
                 checkForErrors().then((value) => {
                   if (value == true) {
-                    handleSubmit().then(() => {
-                      if(checkUserEmail.length < 0 && checkUserName.length < 0) location.reload()
-                    });
+                    handleSubmit().then(() => {reRoute('/')});
                   }
                 });
               }}
               className="needs-validation"
             >
-              <div className="form-floating mb-3">
-                <input
-                  name="userName"
-                  type="text"
-                  className="form-control form-control_gray"
-                  placeholder="User Name *"
-                  value={userName}
-                  onChange={handleInput}
-                  required
-                />
-                <label>User Name</label>
-              </div>
-
-              <div className="form-floating mb-3">
-                <input
-                  name="email"
-                  type="email"
-                  className="form-control form-control_gray"
-                  placeholder="Email address *"
-                  value={email}
-                  onChange={handleInput}
-                  required
-                />
-                <label>Email address *</label>
-              </div>
-              <div className="form-floating mb-3">
-                <input
-                  name="phoneNumber"
-                  type="text"
-                  className="form-control form-control_gray"
-                  placeholder="Phone Number *"
-                  value={phoneNumber}
-                  onChange={handleInput}
-                  required
-                />
-                <label>Phone Number *</label>
-              </div>
-
-              <div className="pb-3"></div>
-
               <div className="form-floating mb-3">
                 <input
                   name="password"
@@ -295,7 +213,7 @@ export default function Registration() {
                   onChange={handleInput}
                   required
                 />
-                <label htmlFor="customerPasswodInput">Password *</label>
+                <label htmlFor="customerPasswodInput">New Password *</label>
               </div>
 
               <div className="pb-3"></div>
@@ -311,11 +229,12 @@ export default function Registration() {
                   onChange={handleInput}
                   required
                 />
-                <label htmlFor="customerPasswodInput">Comfirm Password *</label>
+                <label htmlFor="customerPasswodInput">
+                  Comfirm New Password *
+                </label>
               </div>
 
               <ul className="pb-3" style={{ color: "red" }}>
-                {checkboxErr.length > 0 && <li>{checkboxErr}</li>}
                 {passwordDiff.length > 0 && <li>{passwordDiff}</li>}
                 {passwordLes8.length > 0 && <li>{passwordLes8}</li>}
                 {checkPWLower.length > 0 && <li>{checkPWLower}</li>}
@@ -329,30 +248,7 @@ export default function Registration() {
                   <li>{checkConPWSpecialChar}</li>
                 )}
                 {conPasswordLes8.length > 0 && <li>{conPasswordLes8}</li>}
-                {checkUserName && <li>{checkUserName}</li>}
-                {checkUserEmail && <li>{checkUserEmail}</li>}
               </ul>
-
-              <div className="d-flex align-items-left mb-3 pb-2">
-                <div className="form-check mb-0">
-                  <input
-                    name="term"
-                    className="form-check-input form-check-input_fill"
-                    type="checkbox"
-                    checked={terms}
-                    onChange={() => {
-                      setTerms(!terms);
-                    }}
-                  />
-                  <label className="form-check-label text-secondary">
-                    Please check the box to agree with Brown Commerce privacy
-                    policy. Your personal data will be used to support and
-                    improve your personal experience throughout this website, to
-                    manage access to your account, and for other purposes
-                    described in our privacy policy.
-                  </label>
-                </div>
-              </div>
               <button
                 style={{
                   marginBottom: "5px",
@@ -363,27 +259,7 @@ export default function Registration() {
                 className="btn btn-primary w-100 text-uppercase"
                 type="submit"
               >
-                SignUp
-              </button>
-              <hr />
-              <button
-                onClick={() => {
-                  signInWithGoogle()
-                    .then(() => {
-                      reRoute("/");
-                    })
-                    .then(() => location.reload());
-                }}
-                className="btn btn-primary w-100 text-uppercase"
-                type="button"
-                style={{
-                  backgroundColor: "#DB4437",
-                  borderColor: "#ffe6e6",
-                  borderRadius: "50px",
-                  borderWidth: "3px",
-                }}
-              >
-                signin with google
+                Submit
               </button>
             </form>
           </div>
