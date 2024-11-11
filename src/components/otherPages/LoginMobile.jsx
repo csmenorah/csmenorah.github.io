@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { signInWithGoogle } from "../../../firebase/firebaseUtils";
-import { db, auth } from "../../../firebase/firebaseUtils";
+import {
+  db,
+  auth,
+  signInWithGoogleRedirect,
+  provider
+} from "../../../firebase/firebaseUtils";
 import {
   getDoc,
   doc,
@@ -10,139 +14,163 @@ import {
   query,
   where,
 } from "firebase/firestore";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, getRedirectResult, GoogleAuthProvider } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { closeModalUserlogin } from "@/utlis/aside";
 
+
 export default function LoginMobile() {
+  const [emailOrName, setEmailOrName] = useState("");
+  const [password, setPassword] = useState("");
+  const [veryLogin, setVeryLogin] = useState("");
+  const reRoute = useNavigate();
 
-   const [emailOrName, setEmailOrName] = useState("");
-   const [password, setPassword] = useState("");
-   const [veryLogin, setVeryLogin] = useState("");
+  useEffect(() => {
+    (async () => {
+      await getRedirectResult(auth)
+        .then((result) => {
+          const credential = GoogleAuthProvider.credentialFromResult(result);
+          const token = credential.accessToken;
+          const user = result.user;
+          console.log(token)
+        })
+        .catch((error) => {
+          // Handle Errors here.
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          //console.log(`${errorMessage} and ${errorCode}`)
+          // The email of the user's account used.
+          //const email = error.customData.email;
+          // The AuthCredential type that was used.
+          //const credential = provider.credentialFromError(error);
+          // ...
+        });
+    })();
 
-   const reRoute = useNavigate();
+    return () => {
+     
+    }
 
-   const handleChange = (e) => {
-     const { name, value } = e.target;
+  }, [])
 
-     if (name == "emailorname") {
-       setEmailOrName(value);
-     } else if (name == "password") {
-       setPassword(value);
-     }
-   };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (name == "emailorname") {
+      setEmailOrName(value);
+    } else if (name == "password") {
+      setPassword(value);
+    }
+  };
 
-   const handleSubmit = async () => {
-     if (emailOrName.indexOf("@") >= 1) {
-       let userRef = await getDoc(doc(db, "users", emailOrName));
-       if (userRef.exists()) {
-         if (userRef.data().password === password)
-           await signInWithEmailAndPassword(auth, emailOrName, password).then(
-             () => {
-               setEmailOrName("");
-               setPassword("");
-               setVeryLogin("");
-               closeModalUserlogin();
-             }
-           );
-         else if (userRef.data().password === undefined)
-           setVeryLogin("Account login method is through a provider");
-         else {
-           setVeryLogin("Password incorrect");
-         }
-       } else if (!userRef.exists()) {
-         setVeryLogin("User not found. Create an account");
-         setTimeout(() => {
-           reRoute("/registration");
-           closeModalUserlogin();
-           setVeryLogin("");
-           setEmailOrName("");
-           setPassword("");
-         }, 5000);
-       }
-     } else {
-       let docNameAndPWExist = false;
-       let docNameExistbutNotPW = false;
-       let docNameExistButPWUndef = false;
-       let docNoUserExists = false;
-       let docMatch = {};
-       const docSnapShoot = await getDocs(
-         query(
-           collection(db, "users"),
-           where("displayName", "==", emailOrName.toUpperCase())
-         )
-       );
-       if (docSnapShoot.empty) {
-         docNoUserExists = true;
-       } else {
-         docSnapShoot.forEach(async (doc) => {
-           if (
-             doc.data().displayName === emailOrName.toUpperCase() &&
-             doc.data().password === password
-           ) {
-             docNameAndPWExist = true;
-             docMatch = {
-               ...doc.data(),
-             };
-           } else if (
-             doc.data().displayName === emailOrName.toUpperCase() &&
-             doc.data().password !== password &&
-             doc.data().password !== undefined
-           ) {
-             docNameExistbutNotPW = true;
-           } else if (
-             doc.data().displayName === emailOrName.toUpperCase() &&
-             doc.data().password == undefined
-           ) {
-             docNameExistButPWUndef = true;
-           }
-         });
-       }
-       if (docNameAndPWExist === true) {
-         docNameExistbutNotPW = false;
-         docNameExistButPWUndef = false;
-         docNoUserExists = false;
-         await signInWithEmailAndPassword(auth, docMatch.email, password).then(
-           () => {
-             setEmailOrName("");
-             setPassword("");
-             setVeryLogin("");
-             reRoute('/');
-           }
-         );
-       }
-       if (docNameExistbutNotPW == true) {
-         docNameAndPWExist = false;
-         docNameExistButPWUndef = false;
-         docNoUserExists = false;
-         setVeryLogin("Incorrect password.");
-       }
-       if (docNameExistButPWUndef == true) {
-         docNameAndPWExist = false;
-         docNameExistbutNotPW = false;
-         docNoUserExists = false;
-         setVeryLogin("Account login method is through a provider");
-       }
-       if (docNoUserExists == true) {
-         docNameAndPWExist = false;
-         docNameExistbutNotPW = false;
-         docNameExistButPWUndef = false;
-         setVeryLogin("User not found");
-       }
-     }
-   };
+  const handleSubmit = async () => {
+    if (emailOrName.indexOf("@") >= 1) {
+      let userRef = await getDoc(doc(db, "users", emailOrName));
+      if (userRef.exists()) {
+        if (userRef.data().password === password)
+          await signInWithEmailAndPassword(auth, emailOrName, password).then(
+            () => {
+              setEmailOrName("");
+              setPassword("");
+              setVeryLogin("");
+              closeModalUserlogin();
+            }
+          );
+        else if (userRef.data().password === undefined)
+          setVeryLogin("Account login method is through a provider");
+        else {
+          setVeryLogin("Password incorrect");
+        }
+      } else if (!userRef.exists()) {
+        setVeryLogin("User not found. Create an account");
+        setTimeout(() => {
+          reRoute("/registration");
+          closeModalUserlogin();
+          setVeryLogin("");
+          setEmailOrName("");
+          setPassword("");
+        }, 5000);
+      }
+    } else {
+      let docNameAndPWExist = false;
+      let docNameExistbutNotPW = false;
+      let docNameExistButPWUndef = false;
+      let docNoUserExists = false;
+      let docMatch = {};
+      const docSnapShoot = await getDocs(
+        query(
+          collection(db, "users"),
+          where("displayName", "==", emailOrName.toUpperCase())
+        )
+      );
+      if (docSnapShoot.empty) {
+        docNoUserExists = true;
+      } else {
+        docSnapShoot.forEach(async (doc) => {
+          if (
+            doc.data().displayName === emailOrName.toUpperCase() &&
+            doc.data().password === password
+          ) {
+            docNameAndPWExist = true;
+            docMatch = {
+              ...doc.data(),
+            };
+          } else if (
+            doc.data().displayName === emailOrName.toUpperCase() &&
+            doc.data().password !== password &&
+            doc.data().password !== undefined
+          ) {
+            docNameExistbutNotPW = true;
+          } else if (
+            doc.data().displayName === emailOrName.toUpperCase() &&
+            doc.data().password == undefined
+          ) {
+            docNameExistButPWUndef = true;
+          }
+        });
+      }
+      if (docNameAndPWExist === true) {
+        docNameExistbutNotPW = false;
+        docNameExistButPWUndef = false;
+        docNoUserExists = false;
+        await signInWithEmailAndPassword(auth, docMatch.email, password).then(
+          () => {
+            setEmailOrName("");
+            setPassword("");
+            setVeryLogin("");
+            reRoute("/");
+          }
+        );
+      }
+      if (docNameExistbutNotPW == true) {
+        docNameAndPWExist = false;
+        docNameExistButPWUndef = false;
+        docNoUserExists = false;
+        setVeryLogin("Incorrect password.");
+      }
+      if (docNameExistButPWUndef == true) {
+        docNameAndPWExist = false;
+        docNameExistbutNotPW = false;
+        docNoUserExists = false;
+        setVeryLogin("Account login method is through a provider");
+      }
+      if (docNoUserExists == true) {
+        docNameAndPWExist = false;
+        docNameExistbutNotPW = false;
+        docNameExistButPWUndef = false;
+        setVeryLogin("User not found");
+      }
+    }
+  };
 
-   useEffect(() => {
-     const pageOverlay = document.getElementById("pageOverlay");
+  useEffect(() => {
+    const pageOverlay = document.getElementById("pageOverlay");
 
-     pageOverlay.addEventListener("click", closeModalUserlogin);
+    pageOverlay.addEventListener("click", closeModalUserlogin);
 
-     return () => {
-       pageOverlay.removeEventListener("click", closeModalUserlogin);
-     };
-   }, []);
-
-
+    return () => {
+      pageOverlay.removeEventListener("click", closeModalUserlogin);
+    };
+  }, []);
 
   return (
     <section className="login-register container">
@@ -243,11 +271,7 @@ export default function LoginMobile() {
                 className="btn btn-primary w-100 text-uppercase"
                 type="submit"
                 onClick={() => {
-                  signInWithGoogle().then(() => {
-                    setEmailOrName("");
-                    setPassword("");
-                    setVeryLogin("");
-                  }).then(()=>location.reload());
+                  signInWithGoogleRedirect();
                 }}
                 style={{
                   backgroundColor: "#DB4437",

@@ -157,7 +157,7 @@ export default function CustomerLogin() {
           </div>
           <form
             onSubmit={(e) => {
-              e.preventDefault(), handleSubmit().then(() => location.reload());
+              e.preventDefault(), handleSubmit().then(() => { reRoute('/'); location.reload()});
             }}
             className="aside-content"
           >
