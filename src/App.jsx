@@ -291,7 +291,7 @@ function App() {
                 currentUserExist ? <AccountWishlistPage /> : <NotFound />
               }
             />
-            <Route path="new-password-reset/:email" element={<ConfirmResetPasswordPage />} />
+            <Route path="new-password-reset/:email" element={currentUserExist? <HomePage/> : <ConfirmResetPasswordPage />} />
             <Route path="reset_password" element={<ResetPasswordPage />} />
             <Route
               path="registration"

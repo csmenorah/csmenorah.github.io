@@ -3,7 +3,7 @@ import { openModalUserlogin } from "@/utlis/aside";
 export default function User() {
   return (
     <svg
-      onClick={openModalUserlogin}
+      onClick={""/*openModalUserlogin*/}
       className="d-block"
       width="20"
       height="20"

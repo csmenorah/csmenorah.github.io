@@ -147,9 +147,12 @@ export default function PagesHeader() {
               {currentUserDetails.displayName && (
                 <>
                   <div className="header-tools__item hover-container">
-                    <a className="header-tools__item js-open-aside" href="#">
+                    <Link
+                      className={"header-tools__item js-open-aside"}
+                      to="/account_dashboard"
+                    >
                       <User />
-                    </a>
+                    </Link>
                   </div>
 
                   <Link className="header-tools__item" to="/account_wishlist">
