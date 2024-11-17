@@ -1,6 +1,6 @@
 import { categories3 } from "@/data/categories";
 
-export default function Banner7() {
+export default function Banner7({ products }) {
   return (
     <section className="full-width_padding">
       <div

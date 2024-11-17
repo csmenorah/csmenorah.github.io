@@ -15,7 +15,9 @@ import {
   menuCategories,
   sortingOptions,
 } from "@/data/products/productCategories";
-export default function Shop1() {
+
+
+export default function Shop1({products}) {
   const { toggleWishlist, isAddedtoWishlist } = useContextElement();
   const [selectedColView, setSelectedColView] = useState(4);
 
@@ -166,7 +168,7 @@ export default function Shop1() {
                   >
                     {[elm.imgSrc, elm.imgSrc2].map((elm2, i) => (
                       <SwiperSlide key={i} className="swiper-slide">
-                        <Link to={`/clothing-detail/${elm.id}`}>
+                        <Link to={`/product-detail/${elm.id}`}>
                           <img
                             loading="lazy"
                             src={elm2}
@@ -222,7 +224,7 @@ export default function Shop1() {
                 <div className="pc__info position-relative">
                   <p className="pc__category">{elm.category}</p>
                   <h6 className="pc__title">
-                    <Link to={`/clothing-detail/${elm.id}`}>{elm.title}</Link>
+                    <Link to={`/product-detail/${elm.id}`}>{elm.title}</Link>
                   </h6>
                   <div className="product-card__price d-flex">
                     {elm.priceOld ? (

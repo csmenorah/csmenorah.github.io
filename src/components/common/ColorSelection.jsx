@@ -18,7 +18,7 @@ const swatchColors = [
   },
 ];
 
-export default function ColorSelection({}) {
+export default function ColorSelection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   return (
     <>

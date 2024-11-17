@@ -1,9 +1,6 @@
 import Footer11 from "@/components/footers/PagesFooter";
-
 import Header12 from "@/components/headers/PagesHeader";
-import Blogs from "@/components/homes/home-12/Blogs";
 import Category from "@/components/homes/home-12/Category";
-import Cta from "@/components/homes/home-12/Cta";
 import DiscountSlider from "@/components/homes/home-12/DiscountSlider";
 import Featured from "@/components/homes/home-12/Featured";
 import Features from "@/components/homes/home-12/Features";

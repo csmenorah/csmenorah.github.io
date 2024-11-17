@@ -1,8 +1,11 @@
 /* eslint-disable no-undef */
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
+import { NewsletterContext } from "@/App";
 
 export default function NewsLetter() {
   const modalElement = useRef(null);
+  const { newsLetterDisplayFunc } =
+    useContext(NewsletterContext);
 
   useEffect(() => {
     import("bootstrap").then((bootstrap) => {
@@ -16,6 +19,7 @@ export default function NewsLetter() {
       myModal.show();
       modalElement.current.addEventListener("hidden.bs.modal", () => {
         myModal.hide();
+        newsLetterDisplayFunc(false);
       });
     });
   }, []);
@@ -36,6 +40,7 @@ export default function NewsLetter() {
             className="btn-close"
             data-bs-dismiss="modal"
             aria-label="Close"
+            onClick={() => newsLetterDisplayFunc(false)}
           ></button>
           <div className="row p-0 m-0">
             <div className="col-md-6 p-0 d-none d-md-block">

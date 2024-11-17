@@ -2,7 +2,6 @@ import Footer15 from "@/components/footers/PagesFooter";
 
 import Header15 from "@/components/headers/PagesHeader";
 import BannerSlider from "@/components/homes/home-16/BannerSlider";
-import Blogs from "@/components/homes/home-16/Blogs";
 import Equipments from "@/components/homes/home-16/Equipments";
 import Features from "@/components/homes/home-16/Features";
 import GridBanner from "@/components/homes/home-16/GridBanner";
@@ -34,7 +33,6 @@ export default function HomePage15() {
           <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
           <Equipments />
           <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Blogs />
           <div className="mb-3 mb-xl-4 pb-3 pt-1 pb-xl-4"></div>
           <Features />
           <div className="mb-3 mb-xl-4 pb-3 pt-1 pb-xl-4"></div>

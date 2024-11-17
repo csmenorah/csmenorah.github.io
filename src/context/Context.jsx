@@ -5,7 +5,6 @@ import { useContext, useState } from "react";
 import { auth } from "../../firebase/firebaseUtils";
 import { collection, doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebaseUtils";
-import { signOut } from "firebase/auth";
 const dataContext = React.createContext();
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -28,6 +27,7 @@ export default function Context({ children }) {
   const [currentUserDetails, setCurrentUserDetails] = useState({
     ...initialUserState,
   });
+  
 
   useEffect(() => {
     const subtotal = cartProducts.reduce((accumulator, product) => {

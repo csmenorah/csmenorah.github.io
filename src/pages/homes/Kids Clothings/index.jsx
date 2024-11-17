@@ -1,7 +1,6 @@
 import Footer4 from "@/components/footers/PagesFooter";
 
 import Header4 from "@/components/headers/PagesHeader";
-import Blogs from "@/components/homes/home-4/Blogs";
 import CategoryBanner from "@/components/homes/home-4/CategoryBanner";
 import Hero from "@/components/homes/home-4/Hero";
 import InsideCollextions from "@/components/homes/home-4/InsideCollextions";
@@ -32,7 +31,6 @@ export default function HomePage4() {
           <InsideCollextions />
           <div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
           <LimitedEdition />
-          <Blogs />
         </main>
         <Footer4 />
       </div>

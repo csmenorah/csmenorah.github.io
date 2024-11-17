@@ -207,7 +207,7 @@ export default function Registration() {
       });
       if (userNameExist == false) {
         setCheckUserName("");
-        await setDoc(newUserRef, { ...data })
+        await setDoc(newUserRef, { ...data, userCartegory: "Client" })
           .then(async () => {
             setShowConfirm(true);
             await createUserWithEmailAndPassword(auth, data.email, data.password)

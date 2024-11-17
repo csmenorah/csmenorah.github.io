@@ -5,7 +5,7 @@ import { openCart } from "@/utlis/openCart";
 import { openModalUserlogin } from "@/utlis/aside";
 
 import User from "./components/User";
-import { currencyOptions, languageOptions2 } from "@/data/footer";
+import { currencyOptions } from "@/data/footer";
 import { socialLinks } from "@/data/socials";
 import CategorySelect from "./components/CategorySelect";
 import { useContextElement } from "@/context/Context";

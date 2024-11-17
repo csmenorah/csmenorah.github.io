@@ -2,7 +2,6 @@ import Features from "@/components/common/features/Features";
 import Footer8 from "@/components/footers/PagesFooter";
 import Header9 from "@/components/headers/PagesHeader";
 import BestSelling from "@/components/homes/home-9/BestSelling";
-import Blogs from "@/components/homes/home-9/Blogs";
 import Brands from "@/components/common/brands/Brands";
 import Collections from "@/components/homes/home-9/Collections";
 import Hero from "@/components/homes/home-9/Hero";
@@ -29,7 +28,6 @@ export default function HomePage5() {
           <div className="mb-5 pb-4"></div>
           <Lookbook />
           <div className="pt-1 pb-5 mt-4 mt-xl-5"></div>
-          <Blogs />
           <div className="mb-5 pb-4 pb-xl-5 mb-xl-5"></div>
           <Brands />
           <div className="mb-3 mb-xl-5 pt-1 pb-4"></div>

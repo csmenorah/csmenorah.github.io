@@ -3,7 +3,6 @@ import Footer18 from "@/components/footers/PagesFooter";
 
 import Header18 from "@/components/headers/PagesHeader";
 import Banner from "@/components/homes/home-19/Banner";
-import Blogs from "@/components/homes/home-19/Blogs";
 import Hero from "@/components/homes/home-19/Hero";
 import NewArrival from "@/components/homes/home-19/NewArrival";
 import Populer from "@/components/homes/home-19/Populer";
@@ -31,7 +30,6 @@ export default function HomePage24() {
           <div className="mb-4 mb-xl-5 pt-xl-1 pb-5"></div>
           <Trending />
           <div className="mb-4 mb-xl-5 pt-xl-1 pb-5"></div>
-          <Blogs />
           <div className="mb-4 mb-xl-5 pt-xl-1 pb-5"></div>
           <Brands />
           <div className="mb-4 mb-xl-5 pt-xl-1 pb-5"></div>

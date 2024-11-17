@@ -1,9 +1,6 @@
 import {
-  additionalShopPageitems,
-  blogmenuItems,
   homePages,
   othersMenuItems,
-  shopDetails,
   shopList,
   shopList2,
   shopList3,
@@ -142,8 +139,6 @@ export default function Nav() {
           href="#"
           className={`navigation__link
            ${isActiveParentMenu(shopList) ? "menu-active" : ""}
-           ${isActiveParentMenu(shopDetails) ? "menu-active" : ""}
-           ${isActiveParentMenu(additionalShopPageitems) ? "menu-active" : ""}
           `}
         >
           Shop
@@ -209,48 +204,6 @@ export default function Nav() {
                     </Link>
                   </li>
                 ))}
-              </ul>
-            </div>
-
-            <div className="col pe-4">
-              <a href="#" className="sub-menu__title">
-                Shop List
-              </a>
-              <ul className="sub-menu__list list-unstyled">
-                {shopDetails.map((elm, i) => (
-                  <li key={i} className="sub-menu__item">
-                    <Link
-                      to={elm.href}
-                      className={`menu-link menu-link_us-s ${
-                        isMenuActive(elm.href) ? "menu-active" : ""
-                      }`}
-                    >
-                      {elm.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="col pe-4">
-              <a href="#" className="sub-menu__title">
-                Other Pages
-              </a>
-              <ul className="sub-menu__list list-unstyled">
-                {additionalShopPageitems.map((elm, i) =>
-                  elm.title === "Checkout" ? null : (
-                    <li key={i} className="sub-menu__item">
-                      <Link
-                        to={elm.href}
-                        className={`menu-link menu-link_us-s ${
-                          isMenuActive(elm.href) ? "menu-active" : ""
-                        }`}
-                      >
-                        {elm.title}
-                      </Link>
-                    </li>
-                  )
-                )}
               </ul>
             </div>
 

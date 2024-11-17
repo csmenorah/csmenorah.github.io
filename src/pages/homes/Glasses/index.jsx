@@ -1,7 +1,6 @@
 import Footer13 from "@/components/footers/PagesFooter";
 
 import Header13 from "@/components/headers/PagesHeader";
-import Blogs from "@/components/homes/home-14/Blogs";
 import Category from "@/components/homes/home-14/Category";
 import DailyDeal from "@/components/homes/home-14/DailyDeal";
 import FaceMask from "@/components/homes/home-14/FaceMask";
@@ -36,7 +35,6 @@ export default function HomePage13() {
           <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
           <FaceMask />
           <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Blogs />
           <div className="mb-3 mb-xl-4 pb-3 pt-1 pb-xl-4"></div>
         </main>
         <Footer13 />

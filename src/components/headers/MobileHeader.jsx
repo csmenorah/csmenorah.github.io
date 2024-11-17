@@ -1,4 +1,4 @@
-import { currencyOptions, languageOptions } from "@/data/footer";
+import { currencyOptions } from "@/data/footer";
 
 import { socialLinks } from "@/data/socials";
 

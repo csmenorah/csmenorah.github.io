@@ -9,13 +9,13 @@ export const homePages = [
   { id: 10, title: "Sport Gears", href: "/sport-gears-display"},
   { id: 22, title: "Hand Bags", href: "/hand-bags-display"},
   { id: 17, title: "Shoes", href: "/sheos-display"},
-  { id: 5, title: "Skin Care", href: "/skin-care-display"},
+  { id: 5, title: "Skin Care/ Body Lotions", href: "/skin-care-display"},
   { id: 13, title: "Eye Glasses", href: "/eye-glasses-display"},
   { id: 14, title: "Jewelries", href: "/jeweries-display"},
   { id: 22, title: "Watches", href: "/watches-display"},
-  { id: 6, title: "Cars & Motobikes", href: "/cars-&-motobikes-display"},
-  { id: 7, title: "TV & Radios", href: "/tv-&-radios-display"},
-  { id: 8, title: "Phones & Computers", href: "/phones-&-computers-display"},
+  { id: 6, title: "Cars/  Motobikes", href: "/cars-&-motobikes-display"},
+  { id: 7, title: "TV/  Radios", href: "/tv-&-radios-display"},
+  { id: 8, title: "Phones/  Computers", href: "/phones-&-computers-display"},
   { id: 12, title: "Head Phones", href: "/headphones-display"},
   { id: 21, title: "Other Electronics", href: "/other-electronics-display"},
   { id: 16, title: "Bicycles", href: "/bicycles-display"},
@@ -74,7 +74,7 @@ export const shopList = [
   {
     id: 10,
     href: "/skin-care-shop",
-    title: "Visit Skin Care",
+    title: "Visit Skin Care/ Body Lotions",
   },
   {
     id: 11,
@@ -97,17 +97,17 @@ export const shopList2 = [
   {
     id: 3,
     href: "/cars-&-moto-bike-shop",
-    title: "Visit Cars & Motobikes",
+    title: "Visit Cars/  Motobikes",
   },
   {
     id: 4,
     href: "/tv-&-radio-shop",
-    title: "Visit TV & Radios",
+    title: "Visit TV/  Radios",
   },
   {
     id: 6,
     href: "/phone-&-computers-shop",
-    title: "Phones & Computers",
+    title: "Phones/  Computers",
   },
   {
     id: 7,
@@ -150,7 +150,7 @@ export const shopList3 = [
   },
 ];
 
-export const shopDetails = [
+/*export const shopDetails = [
   { id: 1, href: "/product2_variable/1", title: "Shop Detail V1" },
   { id: 2, href: "/product7_v2/1", title: "Shop Detail V2" },
   { id: 3, href: "/product8_v3/1", title: "Shop Detail V3" },
@@ -162,48 +162,17 @@ export const shopDetails = [
   { id: 9, href: "/product14_v9/1", title: "Shop Detail V9" },
   { id: 10, href: "/product15_v10/1", title: "Shop Detail V10" },
   { id: 11, href: "/product16_v11/1", title: "Shop Detail V11" },
-];
+];*/
 
 export const additionalShopPageitems = [
-  { id: 1, href: "/shop-12", title: "Collection Grid" },
-  { id: 2, href: "/product1_simple/1", title: "Simple Product" },
-  { id: 3, href: "/product2_variable/2", title: "Variable Product" },
-  { id: 4, href: "/product3_external/2", title: "External Product" },
-  { id: 5, href: "/product4_grouped/2", title: "Grouped Product" },
-  { id: 6, href: "/product5_onsale/2", title: "On Sale" },
-  { id: 7, href: "/product6_outofstock/2", title: "Out of Stock" } /* 
-  { id: 8, href: "/shop_cart", title: "Shopping Cart" },
-  { id: 9, href: "/shop_checkout", title: "Checkout" },
-  { id: 10, href: "/shop_order_complete", title: "Order Complete" },
-  { id: 11, href: "/shop_order_tracking", title: "Order Tracking" },*/,
+  //{ id: 1, href: "/shop-12", title: "Collection Grid" },
+  //{ id: 2, href: "/product1_simple/1", title: "Simple Product" },
+  //{ id: 3, href: "/product-variable/2", title: "Variable Product" },
+  //{ id: 4, href: "/external-product/2", title: "External Product" },
+  //{ id: 5, href: "/grouped-product/2", title: "Grouped Product" },
+  //{ id: 6, href: "/product-onsale/2", title: "On Sale" },
+  //{ id: 7, href: "/product-outofstock/2", title: "Out of Stock" },
 ]; 
-
-export const blogmenuItems = [
-  {
-    id: 1,
-    href: "/blog_list1",
-
-    title: "Blog V1",
-  },
-  {
-    id: 2,
-    href: "/blog_list2",
-
-    title: "Blog V2",
-  },
-  {
-    id: 3,
-    href: "/blog_list3",
-
-    title: "Blog V3",
-  },
-  {
-    id: 4,
-    href: "/blog_single/1",
-
-    title: "Blog Detail",
-  },
-];
 
 export const othersMenuItems = [
   /*  {
@@ -277,6 +246,11 @@ export const dashboardMenuItems = [
   },
   {
     id: 6,
+    href: "/add-new-product",
+    title: "Add New Product",
+  },
+  {
+    id: 7,
     href: "/login_register",
     title: "Logout",
   },

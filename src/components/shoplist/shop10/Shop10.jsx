@@ -21,7 +21,9 @@ const itemPerRow = [2, 3, 4];
 
 import { openModalShopFilter } from "@/utlis/aside";
 import { sortingOptions } from "@/data/products/productCategories";
-export default function Shop10() {
+
+
+export default function Shop10({products}) {
   const { toggleWishlist, isAddedtoWishlist } = useContextElement();
 
   const { addProductToCart, isAddedToCartProducts } = useContextElement();
@@ -114,7 +116,7 @@ export default function Shop10() {
                   >
                     {[elm.imgSrc, elm.imgSrc2].map((elm2, i) => (
                       <SwiperSlide key={i} className="swiper-slide">
-                        <Link to={`/product1_simple/${elm.id}`}>
+                        <Link to={`/product-detail/${elm.id}`}>
                           <img
                             loading="lazy"
                             src={elm2}
@@ -170,7 +172,7 @@ export default function Shop10() {
                 <div className="pc__info position-relative">
                   <p className="pc__category">{elm.category}</p>
                   <h6 className="pc__title">
-                    <Link to={`/product1_simple/${elm.id}`}>{elm.title}</Link>
+                    <Link to={`/product-detail/${elm.id}`}>{elm.title}</Link>
                   </h6>
                   <div className="product-card__price d-flex">
                     {elm.priceOld ? (

@@ -3,13 +3,6 @@ import BreadCumb from "./BreadCumb";
 import Colors from "./Colors";
 import Size from "./Size";
 import { Link } from "react-router-dom";
-const imageUrls2 = [
-  "/assets/images/products/product_0-9.jpg",
-  "/assets/images/products/product_0-10.jpg",
-  "/assets/images/products/product_0-11.jpg",
-  "/assets/images/products/product_0-12.jpg",
-  "/assets/images/products/product_0-13.jpg",
-];
 
 import {
   openModalProductAdditionalInformation,
@@ -19,6 +12,11 @@ import {
 import ShareComponent from "../common/ShareComponent";
 import { useContextElement } from "@/context/Context";
 import { useState } from "react";
+import ProductSlider1 from "./sliders/ProductSlider1";
+
+
+
+
 export default function SingleProduct7({ product }) {
   const { cartProducts, setCartProducts } = useContextElement();
   const [quantity, setQuantity] = useState(1);
@@ -49,26 +47,11 @@ export default function SingleProduct7({ product }) {
     }
   };
   return (
-    <section className="product-single product-single__type-7 container">
+    <section className="product-single container">
       <div className="row">
         <div className="col-lg-7">
           <div className="mb-md-1 pb-md-3"></div>
-          <div className="product-single__media" data-media-type="grid-image">
-            <div className="product-single__image">
-              {imageUrls2.map((elm, i) => (
-                <div key={i} className="product-single__image-item">
-                  <img
-                    loading="lazy"
-                    className="h-auto"
-                    src={elm}
-                    width="798"
-                    height="740"
-                    alt="image"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          <ProductSlider1 />
           <div className="product-single__additional-info">
             <a href="#" data-bs-toggle="modal" data-bs-target="#deliveryModal">
               Composition and Care
@@ -236,7 +219,7 @@ export default function SingleProduct7({ product }) {
                 <span>biker, black, bomber, leather</span>
               </div>
             </div>
-            <div className="product-single__details">
+            <div className="product-single__additional-info">
               <a
                 href="#"
                 className="js-open-aside"

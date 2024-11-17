@@ -72,7 +72,7 @@ export default function DailyDeal() {
               className="swiper-slide product-card product-card_style8"
             >
               <div className="pc__img-wrapper pc__img-wrapper_wide2">
-                <Link to={`/product1_simple/${elm.id}`}>
+                <Link to={`/product-detail/${elm.id}`}>
                   <img
                     loading="lazy"
                     src={elm.imgSrc}
@@ -88,7 +88,7 @@ export default function DailyDeal() {
                 <p className="pc__category">{elm.category}</p>
                 <h6 className="pc__title fs-5">
                   <Link
-                    to={`/product1_simple/${elm.id}`}
+                    to={`/product-detail/${elm.id}`}
                     className="theme-color"
                   >
                     {elm.title}

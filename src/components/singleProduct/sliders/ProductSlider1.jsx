@@ -4,25 +4,29 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/thumbs";
 import "swiper/css";
 import "photoswipe/dist/photoswipe.css";
-
 import { Gallery, Item } from "react-photoswipe-gallery";
-const images = [
-  {
-    imgSrc: "/assets/images/products/product_0.jpg",
-  },
-  {
-    imgSrc: "/assets/images/products/product_0-1.jpg",
-  },
-  {
-    imgSrc: "/assets/images/products/product_0-2.jpg",
-  },
-  {
-    imgSrc: "/assets/images/products/product_0-3.jpg",
-  },
-];
-
 import tippy from "tippy.js";
+
+
 export default function ProductSlider1() {
+
+  const images = [
+    {
+      imgSrc: "/assets/images/products/product_0.jpg",
+    },
+    {
+      imgSrc: "/assets/images/products/product_0-1.jpg",
+    },
+    {
+      imgSrc: "/assets/images/products/product_0-2.jpg",
+    },
+    {
+      imgSrc: "/assets/images/products/product_0-3.jpg",
+    },
+    {
+      imgSrc: "/assets/images/products/product_0-3.jpg",
+    },
+  ];
   useEffect(() => {
     tippy("[data-tippy-content]");
   }, []);

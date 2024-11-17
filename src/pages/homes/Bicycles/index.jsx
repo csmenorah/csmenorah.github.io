@@ -2,7 +2,6 @@ import Footer17 from "@/components/footers/PagesFooter";
 
 import Header17 from "@/components/headers/PagesHeader";
 import Banner from "@/components/homes/home-18/Banner";
-import Blog from "@/components/homes/home-18/Blog";
 import Brands from "@/components/homes/home-18/Brands";
 import Categories from "@/components/homes/home-18/Categories";
 import Featured from "@/components/homes/home-18/Featured";
@@ -36,7 +35,6 @@ export default function HomePage16() {
           <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
           <Testimonials />
           <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Blog />
           <div className="mt-3 mt-xl-4 pb-3 pt-1 pb-xl-4"></div>
           <Brands />
           <div className="mt-3 mt-xl-4 pb-3 pt-1 pb-xl-4"></div>

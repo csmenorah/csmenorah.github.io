@@ -2,7 +2,6 @@ import Footer5 from "@/components/footers/PagesFooter";
 
 import Header5 from "@/components/headers/PagesHeader";
 import BestSeller from "@/components/homes/home-5/BestSeller";
-import Blogs from "@/components/homes/home-5/Blogs";
 import Categories from "@/components/homes/home-5/Categories";
 import Cta from "@/components/homes/home-5/Cta";
 import Features from "@/components/homes/home-5/Features";
@@ -34,7 +33,6 @@ export default function HomePage9() {
           <BestSeller />
           <WeekDeals />
           <div className="pt-1 pb-5 mt-4 mt-xl-5"></div>
-          <Blogs />
           <div className="pt-1 pb-5 mt-4 mt-xl-5"></div>
           <Features />
           <Cta />

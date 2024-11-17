@@ -3,7 +3,6 @@ import Footer9 from "@/components/footers/PagesFooter";
 import Header10 from "@/components/headers/PagesHeader";
 import Banner from "@/components/homes/home-10/Banner";
 import BestSelling from "@/components/homes/home-10/BestSelling";
-import Blogs from "@/components/homes/home-10/Blogs";
 import GridBanner from "@/components/homes/home-10/GridBanner";
 import Hero from "@/components/homes/home-10/Hero";
 import Lookbook from "@/components/homes/home-10/Lookbook";
@@ -40,7 +39,6 @@ export default function HomePage8() {
           <div className="mb-4 pb-4 mb-xl-4 mt-xl-3 pt-xl-3 pb-xl-4"></div>
           <BestSelling />
           <div className="mb-4 pb-4 mb-xl-4 mt-xl-3 pt-xl-3 pb-xl-4"></div>
-          <Blogs />
           <div className="mb-4 pb-4 mb-xl-4 mt-xl-3 pt-xl-3 pb-xl-4"></div>
         </main>
         <Footer9 />

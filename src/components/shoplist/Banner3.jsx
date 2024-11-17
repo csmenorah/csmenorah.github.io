@@ -31,7 +31,7 @@ const slides = [
   },
 ];
 
-export default function Banner3() {
+export default function Banner3({ products }) {
   const swiperOptions = {
     autoplay: {
       delay: 5000,

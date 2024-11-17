@@ -44,7 +44,7 @@ export default function Lookbook() {
               className="example"
               render={() => (
                 <div className="popover-product">
-                  <Link to={`/product1_simple/${id}`}>
+                  <Link to={`/product-detail/${id}`}>
                     <img
                       loading="lazy"
                       className="mb-3"
@@ -55,7 +55,7 @@ export default function Lookbook() {
                     />
                   </Link>
                   <p className="fw-medium mb-0">
-                    <Link to={`/product1_simple/${id}`}>{title}</Link>
+                    <Link to={`/product-detail/${id}`}>{title}</Link>
                   </p>
                   <p className="mb-0">${price}</p>
                 </div>

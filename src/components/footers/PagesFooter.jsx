@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { currencyOptions, languageOptions, socialLinks } from "@/data/footer";
+import { currencyOptions, socialLinks } from "@/data/footer";
 import { useContextElement } from "@/context/Context";
 
 export default function PagesFooter() {

@@ -2,7 +2,6 @@ import Footer21 from "@/components/footers/PagesFooter";
 
 import Header21 from "@/components/headers/PagesHeader";
 import BestSelling from "@/components/homes/home-22/BestSelling";
-import Blogs from "@/components/homes/home-22/Blogs";
 import Category from "@/components/homes/home-22/Category";
 import Features from "@/components/homes/home-22/Features";
 import Hero from "@/components/homes/home-22/Hero";
@@ -36,7 +35,6 @@ export default function HomePage20() {
           <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
           <BestSelling />
           <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Blogs />
           <div className="pb-3 pt-1 pb-xl-5"></div>
         </main>
         <Footer21 />

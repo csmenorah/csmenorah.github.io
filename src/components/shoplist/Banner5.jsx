@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import BannerLinks from "./BannerLinks";
 
-export default function Banner5() {
+export default function Banner5({ products }) {
   return (
     <section className="full-width_padding">
       <div
