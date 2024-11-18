@@ -17,13 +17,13 @@ export default function Products3() {
           <p className="text_dash text-uppercase text-red fw-medium">
             Deal of the week
           </p>
-          <h3 className="h1 text-uppercase">
+          <h3 className="h1 text-uppercase" style={{ color: "white" }}>
             <strong>Cars</strong> Collection
           </h3>
           <Link
             to="/shop-1"
             className="btn-link default-underline text-uppercase fw-medium mt-3"
-            style={{color:"white"}}
+            style={{ color: "white" }}
           >
             Shop Now
           </Link>
