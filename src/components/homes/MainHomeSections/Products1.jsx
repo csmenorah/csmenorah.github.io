@@ -38,7 +38,8 @@ export default function Products1() {
               <div
                 className="background-img"
                 style={{
-                  backgroundImage: "url(/assets/images/collection_grid_2.jpg)",
+                  backgroundImage:
+                    "url(/assets/images/men-collection-home-img.jpg)",
                 }}
               ></div>
               <div className="content_abs content_bottom content_left content_bottom-md content_left-md">
@@ -63,13 +64,16 @@ export default function Products1() {
                       className="background-img"
                       style={{
                         backgroundImage:
-                          "url(/assets/images/collection_grid_3.jpg)",
+                          "url(/assets/images/kids-collection.jpg)",
                       }}
                     ></div>
                     <div className="content_abs content_bottom content_left content_bottom-md content_left-md">
                       <p className="text-uppercase mb-1">Hot List</p>
                       <h3 className="text-uppercase">
-                        <strong>Kids</strong> Collection
+                        <strong>Kids</strong>
+                      </h3>
+                      <h3 className="text-uppercase">
+                        Collection
                       </h3>
                       <Link
                         to="/shop-1"
@@ -82,22 +86,21 @@ export default function Products1() {
                   </div>
                   {/* <!-- /.collection-grid__item --> */}
                 </div>
-
                 <div className="col-md-6 h-md-100">
                   <div className="collection-grid__item h-md-100 position-relative">
                     <div
                       className="background-img"
-                      style={{ backgroundColor: "#f5e6e0" }}
+                      style={{
+                        backgroundImage:
+                          "url(/assets/images/africa-collection.jpg)",
+                      }}
                     ></div>
                     <div className="content_abs content_bottom content_left content_bottom-md content_left-md">
+                      <p className="text-uppercase mb-1">Hot List</p>
                       <h3 className="text-uppercase">
-                        <strong>E-Gift</strong> Cards
+                        <strong>African</strong>
                       </h3>
-                      <p className="mb-1">
-                        Surprise someone with the gift they
-                        <br />
-                        really want.
-                      </p>
+                      <h3 className="text-uppercase"> Collection</h3>
                       <Link
                         to="/shop-1"
                         className="btn-link default-underline text-uppercase fw-medium"

@@ -1,43 +1,41 @@
-import Footer5 from "@/components/footers/PagesFooter";
-
-import Header5 from "@/components/headers/PagesHeader";
-import BestSeller from "@/components/homes/home-5/BestSeller";
-import Categories from "@/components/homes/home-5/Categories";
-import Cta from "@/components/homes/home-5/Cta";
-import Features from "@/components/homes/home-5/Features";
-import Hero from "@/components/homes/home-5/Hero";
-import LookBook from "@/components/homes/home-5/LookBook";
-import TopCollections from "@/components/homes/home-5/TopCollections";
-import WeekDeals from "@/components/homes/home-5/WeekDeals";
+import Features from "@/components/common/features/Features";
+import Footer8 from "@/components/footers/PagesFooter";
+import Header9 from "@/components/headers/PagesHeader";
+import BestSelling from "@/components/homes/home-9/BestSelling";
+import Brands from "@/components/common/brands/Brands";
+import Collections from "@/components/homes/home-9/Collections";
+import Hero from "@/components/homes/home-9/Hero";
+import Instagram from "@/components/homes/home-9/Instagram";
+import Lookbook from "@/components/homes/home-9/Lookbook";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
-  title: "Home 5 || Uomo eCommerce Reactjs Template",
+  title: "Home 9 || Uomo eCommerce Reactjs Template",
   description: "Uomo eCommerce Reactjs Template",
 };
-export default function HomePage9() {
+export default function HomePage5() {
   return (
     <>
       <MetaComponent meta={metadata} />
       <div className="theme-18">
-        <Header5 />
-        <main className="bg-grey-faf9f8 page-wrapper-3" style={{ padding: 0 }}>
+        <Header9 />{" "}
+        <main className="page-wrapper" style={{ padding: 0 }}>
           <Hero />
-          <div className="mb-4 mb-xl-5 pt-1 pb-5"></div>
-          <Categories />
-          <div className="mb-4 mb-xl-5 pt-1 pb-5"></div>
-          <TopCollections />
-          <div className="pt-1 pb-5 mb-4 mb-xl-5"></div>
-          <LookBook />
+          <div className="mb-3 pb-1"></div>
+          <Collections />
+          <div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
+          <BestSelling />
+          <div className="mb-5 pb-4"></div>
+          <Lookbook />
           <div className="pt-1 pb-5 mt-4 mt-xl-5"></div>
-          <BestSeller />
-          <WeekDeals />
-          <div className="pt-1 pb-5 mt-4 mt-xl-5"></div>
-          <div className="pt-1 pb-5 mt-4 mt-xl-5"></div>
+          <div className="mb-5 pb-4 pb-xl-5 mb-xl-5"></div>
+          <Brands />
+          <div className="mb-3 mb-xl-5 pt-1 pb-4"></div>
+          <Instagram />
+          <div className="mb-3 mb-xl-5"></div>
           <Features />
-          <Cta />
         </main>
-        <Footer5 parentclassName={"footer footer_type_2 dark"} />
+        <Footer8 />
       </div>
     </>
   );

@@ -9,13 +9,15 @@ export default function Products4() {
           <div className="grid-banner__item grid-banner__item_rect position-relative mb-3">
             <div
               className="background-img"
-              style={{ backgroundImage: "url(/assets/images/banner_1.jpg)" }}
+              style={{
+                backgroundImage: "url(/assets/images/sports-wears.png)",
+              }}
             ></div>
             <div className="content_abs content_bottom content_left content_bottom-lg content_left-lg">
               <h6 className="text-uppercase text-white fw-medium mb-3">
-                Starting At $19
+                {/*Starting At $19*/ ""}
               </h6>
-              <h3 className="text-white mb-3">Women's T-Shirts</h3>
+              <h3 className="text-white mb-3">Sporting Gears</h3>
               <Link
                 to="/shop-1"
                 className="btn-link default-underline text-uppercase text-white fw-medium"
@@ -26,20 +28,22 @@ export default function Products4() {
             {/* <!-- /.content_abs content_bottom content_left content_bottom-md content_left-md --> */}
           </div>
         </div>
-        {/* <!-- /.col-md-6 --> */}
-
         <div className="col-md-6">
           <div className="grid-banner__item grid-banner__item_rect position-relative mb-3">
             <div
               className="background-img"
-              style={{ backgroundImage: "url(/assets/images/banner_2.jpg)" }}
+              style={{
+                backgroundImage: "url(/assets/images/home-funiture.jpg)",
+              }}
             ></div>
             <div className="content_abs content_bottom content_left content_bottom-lg content_left-lg">
-              <h6 className="text-uppercase fw-medium mb-3">Starting At $39</h6>
-              <h3 className="mb-3">Men's Sportswear</h3>
+              <h6 className="text-uppercase text-white fw-medium mb-3">
+                {/*Starting At $19*/ ""}
+              </h6>
+              <h3 className="text-white mb-3">House Whole Funitures</h3>
               <Link
                 to="/shop-1"
-                className="btn-link default-underline text-uppercase fw-medium"
+                className="btn-link default-underline text-uppercase text-white fw-medium"
               >
                 Shop Now
               </Link>
@@ -47,7 +51,6 @@ export default function Products4() {
             {/* <!-- /.content_abs content_bottom content_left content_bottom-md content_left-md --> */}
           </div>
         </div>
-        {/* <!-- /.col-md-6 --> */}
       </div>
       {/* <!-- /.row --> */}
     </section>

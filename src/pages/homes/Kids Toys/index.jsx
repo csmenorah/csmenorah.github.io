@@ -1,13 +1,14 @@
-import Brands from "@/components/common/brands/Brands";
 import Footer9 from "@/components/footers/PagesFooter";
 import Header10 from "@/components/headers/PagesHeader";
-import Banner from "@/components/homes/home-10/Banner";
-import BestSelling from "@/components/homes/home-10/BestSelling";
-import GridBanner from "@/components/homes/home-10/GridBanner";
-import Hero from "@/components/homes/home-10/Hero";
-import Lookbook from "@/components/homes/home-10/Lookbook";
-import Trending from "@/components/homes/home-10/Trending";
-import VideoBanner from "@/components/homes/home-10/VideoBanner";
+import Testimonials from "@/components/homes/home-21/Testimonials";
+import BestSeller from "@/components/homes/home-21/BestSeller";
+import Categories from "@/components/homes/home-21/Categories";
+import Clothing from "@/components/homes/home-21/Clothing";
+import Collections from "@/components/homes/home-21/Collections";
+import Features from "@/components/homes/home-21/Features";
+import Hero from "@/components/homes/home-21/Hero";
+import StrollerCollection from "@/components/homes/home-21/StrollerCollection";
+import ToysCollection from "@/components/homes/home-21/ToysCollection";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
@@ -22,24 +23,53 @@ export default function HomePage8() {
         <Header10 />
         <main style={{ padding: 0 }}>
           <Hero />
-          <div className="container mw-1620 bg-white">
-            <div className="mb-3 mb-xl-5 pt-1 pb-2"></div>
-            <Brands />
-            <div className="mb-3 mb-xl-5 pt-1 pb-2"></div>
-            <Banner />
-            <div className="mb-4 pb-4 mb-xl-4 mt-xl-3 pt-xl-3 pb-xl-4"></div>
-            <Trending />
+          <Features />
+          <div className="container">
+            <div
+              className="border-top-1-dashed mb-3 pb-3 pt-1 pb-xl-5"
+              style={{ color: "#b1a8cd" }}
+            ></div>
           </div>
-          <div className="mb-4 pb-4 mb-xl-4 mt-xl-3 pt-xl-3 pb-xl-4"></div>
-          <VideoBanner />
-          <div className="mb-4 pb-4 mb-xl-4 mt-xl-3 pt-xl-3 pb-xl-4"></div>
-          <GridBanner />
-          <div className="mb-4 pb-4 mb-xl-4 mt-xl-3 pt-xl-3 pb-xl-4"></div>
-          <Lookbook />
-          <div className="mb-4 pb-4 mb-xl-4 mt-xl-3 pt-xl-3 pb-xl-4"></div>
-          <BestSelling />
-          <div className="mb-4 pb-4 mb-xl-4 mt-xl-3 pt-xl-3 pb-xl-4"></div>
-          <div className="mb-4 pb-4 mb-xl-4 mt-xl-3 pt-xl-3 pb-xl-4"></div>
+          <Categories />
+          <div className="container">
+            <div className="mb-3 mb-xl-4 pt-3 pb-4"></div>
+
+            <div
+              className="border-top-1-dashed mb-3 pb-3 pt-1 pb-xl-5"
+              style={{ color: "#b1a8cd" }}
+            ></div>
+          </div>
+          <BestSeller />
+          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
+          <Collections />
+          <div className="container">
+            <div className="mb-3 mb-xl-4 pt-3 pb-4"></div>
+            <div
+              className="border-top-1-dashed mb-3 pb-3 pt-1 pb-xl-5"
+              style={{ color: "#b1a8cd" }}
+            ></div>
+          </div>
+          <Clothing />
+          <div className="container">
+            <div className="mb-3 mb-xl-4 pt-3 pb-4"></div>
+            <div
+              className="border-top-1-dashed mb-3 pb-3 pt-1 pb-xl-5"
+              style={{ color: "#b1a8cd" }}
+            ></div>
+          </div>
+          <ToysCollection />
+          <div className="container">
+            <div className="mb-3 mb-xl-4 pt-3 pb-4"></div>
+            <div
+              className="border-top-1-dashed mb-3 pb-3 pt-1 pb-xl-5"
+              style={{ color: "#b1a8cd" }}
+            ></div>
+          </div>
+          <StrollerCollection />
+          <div className="mb-3 mb-xl-5 pb-3 pt-1"></div>
+          <div className="bg-grey-faf9f8">
+            <Testimonials />
+          </div>
         </main>
         <Footer9 />
       </div>

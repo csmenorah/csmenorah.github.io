@@ -1,11 +1,13 @@
-import Features from "@/components/common/features/Features";
 import Footer7 from "@/components/footers/PagesFooter";
 import Header7 from "@/components/headers/PagesHeader";
-import Hero from "@/components/homes/home-7/Hero";
-import Lookbook from "@/components/homes/home-7/Lookbook";
-import ProductsGrid from "@/components/homes/home-7/ProductsGrid";
-import ProductsSlider from "@/components/homes/home-7/ProductsSlider";
-import TrendingProducts from "@/components/homes/home-7/TrendingProducts";
+import Banner from "@/components/homes/home-18/Banner";
+import Brands from "@/components/homes/home-18/Brands";
+import Categories from "@/components/homes/home-18/Categories";
+import Features from "@/components/homes/home-18/Features";
+import Hero from "@/components/homes/home-18/Hero";
+import Products from "@/components/homes/home-18/Products";
+import Testimonials from "@/components/homes/home-18/Testimonials";
+import Featured from "@/components/homes/home-18/Featured";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
@@ -20,16 +22,18 @@ export default function HomePage6() {
         <Header7 />
         <main style={{ padding: 0 }}>
           <Hero />
-          <div className="mb-4 mb-xl-5 pt-1 pb-5"></div>
-          <TrendingProducts />
-          <div className="mb-4 mb-xl-5 pt-1 pb-5"></div>
-          <ProductsGrid />
-          <div className="mb-5 pb-4"></div>
-          <Lookbook />
-          <div className="mb-4 mb-xl-5 pt-1 pb-5"></div>
-          <ProductsSlider />
-          <div className="mb-4 mb-xl-5 pt-1 pb-5"></div>
           <Features />
+          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
+          <Categories />
+          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
+          <Featured />
+          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-4"></div>
+          <Banner />
+          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
+          <Products />
+          <Testimonials />
+          <Brands />
+          <div className="mt-3 mt-xl-4 pb-3 pt-1 pb-xl-4"></div>
         </main>
         <Footer7 />
       </div>

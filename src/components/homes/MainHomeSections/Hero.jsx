@@ -51,7 +51,9 @@ export default function Hero() {
             <div className="slideshow-character position-absolute bottom-0 pos_right-center">
               <img
                 loading="lazy"
-                src={elm.characterImg}
+                src={
+                  /*elm.characterImg*/ "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fslideshow-character1.png&w=640&q=75"
+                }
                 width="400"
                 height="733"
                 alt="Woman Fashion 1"

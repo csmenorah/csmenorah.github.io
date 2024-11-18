@@ -9,7 +9,7 @@ export default function Products3() {
     >
       <div
         className="background-img"
-        style={{ backgroundImage: "url(/assets/images/deal_timer_bg.jpg)" }}
+        style={{ backgroundImage: "url(/assets/images/cars.jpg)" }}
       ></div>
 
       <div className="deal-timer-wrapper container position-relative">
@@ -18,18 +18,19 @@ export default function Products3() {
             Deal of the week
           </p>
           <h3 className="h1 text-uppercase">
-            <strong>Spring</strong> Collection
+            <strong>Cars</strong> Collection
           </h3>
           <Link
             to="/shop-1"
             className="btn-link default-underline text-uppercase fw-medium mt-3"
+            style={{color:"white"}}
           >
             Shop Now
           </Link>
         </div>
 
         <div className="position-relative d-flex align-items-center text-center pt-xxl-4 js-countdown">
-          <CountDownComponent />
+          {/*<CountDownComponent />*/}
         </div>
       </div>
       {/* <!-- /.deal-timer-wrapper --> */}

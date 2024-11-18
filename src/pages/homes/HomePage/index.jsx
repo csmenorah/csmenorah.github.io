@@ -35,7 +35,6 @@ export default function HomePage() {
           <Products4 />
           <div className="mb-5 pb-1 pb-xl-4"></div>
           <Products5 />
-          <InstaGram />
           <div className="mb-4 pb-4 pb-xl-5 mb-xl-5"></div>
           <div className="bg-white">
             <Features />{" "}

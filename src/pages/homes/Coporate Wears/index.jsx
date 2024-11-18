@@ -1,15 +1,13 @@
 import Header20 from "@/components/headers/PagesHeader";
-import Testimonials from "@/components/homes/home-21/Testimonials";
-import BestSeller from "@/components/homes/home-21/BestSeller";
-import Categories from "@/components/homes/home-21/Categories";
-import Clothing from "@/components/homes/home-21/Clothing";
-import Collections from "@/components/homes/home-21/Collections";
-import Features from "@/components/homes/home-21/Features";
-import Hero from "@/components/homes/home-21/Hero";
-import StrollerCollection from "@/components/homes/home-21/StrollerCollection";
-import ToysCollection from "@/components/homes/home-21/ToysCollection";
-
-import Instagram from "@/components/homes/home-21/Instagram";
+import BestSeller from "@/components/homes/home-5/BestSeller";
+import Blogs from "@/components/homes/home-5/Blogs";
+import Categories from "@/components/homes/home-5/Categories";
+import Cta from "@/components/homes/home-5/Cta";
+import Features from "@/components/homes/home-5/Features";
+import Hero from "@/components/homes/home-5/Hero";
+import LookBook from "@/components/homes/home-5/LookBook";
+import TopCollections from "@/components/homes/home-5/TopCollections";
+import WeekDeals from "@/components/homes/home-5/WeekDeals";
 import Footer20 from "@/components/footers/PagesFooter";
 
 import MetaComponent from "@/components/common/MetaComponent";
@@ -25,55 +23,21 @@ export default function HomePage19() {
         <Header20 />
         <main style={{ padding: 0 }}>
           <Hero />
-          <Features />
-          <div className="container">
-            <div
-              className="border-top-1-dashed mb-3 pb-3 pt-1 pb-xl-5"
-              style={{ color: "#b1a8cd" }}
-            ></div>
-          </div>
+          <Hero />
+          <div className="mb-4 mb-xl-5 pt-1 pb-5"></div>
           <Categories />
-          <div className="container">
-            <div className="mb-3 mb-xl-4 pt-3 pb-4"></div>
-
-            <div
-              className="border-top-1-dashed mb-3 pb-3 pt-1 pb-xl-5"
-              style={{ color: "#b1a8cd" }}
-            ></div>
-          </div>
+          <div className="mb-4 mb-xl-5 pt-1 pb-5"></div>
+          <TopCollections />
+          <div className="pt-1 pb-5 mb-4 mb-xl-5"></div>
+          <LookBook />
+          <div className="pt-1 pb-5 mt-4 mt-xl-5"></div>
           <BestSeller />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Collections />
-          <div className="container">
-            <div className="mb-3 mb-xl-4 pt-3 pb-4"></div>
-            <div
-              className="border-top-1-dashed mb-3 pb-3 pt-1 pb-xl-5"
-              style={{ color: "#b1a8cd" }}
-            ></div>
-          </div>
-          <Clothing />
-          <div className="container">
-            <div className="mb-3 mb-xl-4 pt-3 pb-4"></div>
-            <div
-              className="border-top-1-dashed mb-3 pb-3 pt-1 pb-xl-5"
-              style={{ color: "#b1a8cd" }}
-            ></div>
-          </div>
-          <ToysCollection />
-          <div className="container">
-            <div className="mb-3 mb-xl-4 pt-3 pb-4"></div>
-            <div
-              className="border-top-1-dashed mb-3 pb-3 pt-1 pb-xl-5"
-              style={{ color: "#b1a8cd" }}
-            ></div>
-          </div>
-          <StrollerCollection />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1"></div>
-          <div className="bg-grey-faf9f8">
-            <Testimonials />
-          </div>
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Instagram />
+          <WeekDeals />
+          <div className="pt-1 pb-5 mt-4 mt-xl-5"></div>
+          <Blogs />
+          <div className="pt-1 pb-5 mt-4 mt-xl-5"></div>
+          <Features />
+          <Cta />
         </main>
         <Footer20 />
       </div>

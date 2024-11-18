@@ -1,14 +1,12 @@
-import Features from "@/components/common/features/Features";
 import Footer19 from "@/components/footers/PagesFooter";
 
 import Header19 from "@/components/headers/PagesHeader";
-import Banner from "@/components/homes/home-20/Banner";
-import BestSelling from "@/components/homes/home-20/BestSelling";
-import Category from "@/components/homes/home-20/Category";
-import GridBanner from "@/components/homes/home-20/GridBanner";
-import Hero from "@/components/homes/home-20/Hero";
-import Instagram from "@/components/homes/home-20/Instagram";
-import TrendyItems from "@/components/homes/home-20/TrendyItems";
+import CategoryBanner from "@/components/homes/home-4/CategoryBanner";
+import Hero from "@/components/homes/home-4/Hero";
+import InsideCollextions from "@/components/homes/home-4/InsideCollextions";
+import LimitedEdition from "@/components/homes/home-4/LimitedEdition";
+import Testimonials from "@/components/homes/home-4/Testimonials";
+import TrendingProducts from "@/components/homes/home-4/TrendingProducts";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
@@ -23,21 +21,16 @@ export default function HomePage18() {
         <Header19 />
         <main className="page-wrapper" style={{ padding: 0 }}>
           <Hero />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Category />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <TrendyItems />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <GridBanner />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Banner />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <BestSelling />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Features />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Instagram />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
+          <div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
+          <TrendingProducts />
+          <div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
+          <CategoryBanner />
+          <div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
+          <Testimonials />
+          <div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
+          <InsideCollextions />
+          <div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
+          <LimitedEdition />
         </main>
         <Footer19 />
       </div>

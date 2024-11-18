@@ -1,13 +1,14 @@
-import Brands from "@/components/common/brands/Brands";
 import Footer14 from "@/components/footers/PagesFooter";
 
 import Header14 from "@/components/headers/PagesHeader";
-import Categories from "@/components/homes/home-15/Categories";
-import Featured from "@/components/homes/home-15/Featured";
-import Hero from "@/components/homes/home-15/Hero";
-import Instagram from "@/components/homes/home-15/Instagram";
-import Lookbook from "@/components/homes/home-15/Lookbook";
-import PopulerProducts from "@/components/homes/home-15/PopulerProducts";
+import Features from "@/components/common/features/Features";
+
+import Banner from "@/components/homes/home-20/Banner";
+import BestSelling from "@/components/homes/home-20/BestSelling";
+import Category from "@/components/homes/home-20/Category";
+import GridBanner from "@/components/homes/home-20/GridBanner";
+import Hero from "@/components/homes/home-20/Hero";
+import TrendyItems from "@/components/homes/home-20/TrendyItems";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
@@ -23,18 +24,18 @@ export default function HomePage14() {
         <main style={{ padding: 0 }}>
           <Hero />
           <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Featured />
+          <Category />
           <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Categories />
+          <TrendyItems />
           <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <PopulerProducts />
+          <GridBanner />
           <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Lookbook />
+          <Banner />
           <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
+          <BestSelling />
           <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Brands />
+          <Features />
           <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Instagram />
         </main>
         <Footer14 />
       </div>

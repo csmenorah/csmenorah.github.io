@@ -1,14 +1,13 @@
 import Footer17 from "@/components/footers/PagesFooter";
 
 import Header17 from "@/components/headers/PagesHeader";
-import Banner from "@/components/homes/home-18/Banner";
-import Brands from "@/components/homes/home-18/Brands";
-import Categories from "@/components/homes/home-18/Categories";
-import Featured from "@/components/homes/home-18/Featured";
-import Features from "@/components/homes/home-18/Features";
-import Hero from "@/components/homes/home-18/Hero";
-import Products from "@/components/homes/home-18/Products";
-import Testimonials from "@/components/homes/home-18/Testimonials";
+import BannerSlider from "@/components/homes/home-16/BannerSlider";
+import Equipments from "@/components/homes/home-16/Equipments";
+import Features from "@/components/homes/home-16/Features";
+import GridBanner from "@/components/homes/home-16/GridBanner";
+import Hero from "@/components/homes/home-16/Hero";
+import MostPopuler from "@/components/homes/home-16/MostPopuler";
+import VideoBanner from "@/components/homes/home-16/VideoBanner";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
@@ -23,21 +22,19 @@ export default function HomePage16() {
         <Header17 />
         <main className="bg-grey-eeeeee" style={{ padding: 0 }}>
           <Hero />
+          <div className="mb-4 mb-xl-5 pt-1 pb-5"></div>
+          <GridBanner />
+          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
+          <MostPopuler />
+          <div className="mb-3 pb-3 pt-1"></div>
+          <VideoBanner />
+          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
+          <BannerSlider />
+          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
+          <Equipments />
+          <div className="mb-3 mb-xl-4 pb-3 pt-1 pb-xl-4"></div>
           <Features />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Categories />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Featured />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-4"></div>
-          <Banner />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Products />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Testimonials />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <div className="mt-3 mt-xl-4 pb-3 pt-1 pb-xl-4"></div>
-          <Brands />
-          <div className="mt-3 mt-xl-4 pb-3 pt-1 pb-xl-4"></div>
+          <div className="mb-3 mb-xl-4 pb-3 pt-1 pb-xl-4"></div>
         </main>
         <Footer17 />
       </div>

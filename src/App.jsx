@@ -31,24 +31,23 @@ import HomePage from "./pages/homes/HomePage";
 import HomePage2 from "./pages/homes/Female Clothings";
 import HomePage3 from "./pages/homes/Men Clothings";
 import HomePage4 from "./pages/homes/Kids Clothings";
-import HomePage5 from "./pages/homes/House Whole Funitures";
-import HomePage6 from "./pages/homes/Skin Care";
+import HomePage5 from "./pages/homes/Electronics";
 import HomePage7 from "./pages/homes/Cars & Motobikes";
-import HomePage8 from "./pages/homes/TV & Radios";
-import HomePage9 from "./pages/homes/Phones & Computers";
-import HomePage10 from "./pages/homes/Kids Toys";
+import HomePage8 from "./pages/homes/Kids Toys";
+import HomePage9 from "./pages/homes/House Whole Funitures";
+import HomePage10 from "./pages/homes/Sport Gears";
 import HomePage11 from "./pages/homes/Sport Gears";
-import HomePage12 from "./pages/homes/Video Games";
-import HomePage13 from "./pages/homes/Head Phones";
-import HomePage14 from "./pages/homes/Glasses";
-import HomePage15 from "./pages/homes/Jewelries";
-import HomePage16 from "./pages/homes/Kitchen Utensils";
+import HomePage12 from "./pages/homes/Skin Care";
+import HomePage13 from "./pages/homes/Glasses";
+import HomePage14 from "./pages/homes/Jewelries";
+import HomePage15 from "./pages/homes/Kitchen Utensils";
 import HomePage17 from "./pages/homes/Bicycles";
-import HomePage18 from "./pages/homes/Shoes";
-import HomePage19 from "./pages/homes/Classic Clothings";
+import HomePage18 from "./pages/homes/Classic Clothings";
+import HomePage19 from "./pages/homes/Coporate Wears";
 import HomePage20 from "./pages/homes/Coporate Wears";
 import HomePage21 from "./pages/homes/Africa Wears";
-import HomePage22 from "./pages/homes/Other Electronics";
+import HomePage25 from "./pages/homes/Shoes";
+import HomePage26 from "./pages/homes/HomeworkTools";
 import FemaleClothings from "./pages/shoplist/female-clothings";
 import ShopPage2 from "./pages/shoplist/men-clothings";
 import ShopPage3 from "./pages/shoplist/children-clothings";
@@ -65,10 +64,8 @@ import ShopPage13 from "./pages/shoplist/jewelries-shop";
 import ShopPage14 from "./pages/shoplist/watches-shop";
 import ShopPage15 from "./pages/shoplist/cars-&-moto-bike-shop";
 import ShopPage17 from "./pages/shoplist/phone-&-computers-shop";
-import ShopPage18 from "./pages/shoplist/headphones-shop";
 import ShopPage19 from "./pages/shoplist/other-electronics-shop";
 import ShopPage20 from "./pages/shoplist/bicycle-shop";
-import ShopPage16 from "./pages/shoplist/tv-&-radio-shop";
 import ShopPage21 from "./pages/shoplist/kids-toy-shop";
 import ShopPage22 from "./pages/shoplist/video-games-shop";
 import ShopPage23 from "./pages/shoplist/kitchen-utensils-shop";
@@ -147,14 +144,14 @@ function App() {
               <Route index element={<HomePage />} />
               <Route path="home" element={<HomePage />} />
               <Route path="female-clothings-display" element={<HomePage2 />} />
+              <Route
+                path="house-whole-assistive-tools"
+                element={<HomePage26 />}
+              />
               <Route path="men-clothings-display" element={<HomePage3 />} />
               <Route path="kids-clothings-display" element={<HomePage4 />} />
-              <Route
-                path="phones-&-computers-display"
-                element={<HomePage5 />}
-              />
-              <Route path="cars-&-motobikes-display" element={<HomePage6 />} />
-              <Route path="tv-&-radios-display" element={<HomePage7 />} />
+              <Route path="electronics-display" element={<HomePage5 />} />
+              <Route path="cars-&-motobikes-display" element={<HomePage7 />} />
               <Route path="kids-toys-display" element={<HomePage8 />} />
               <Route
                 path="house-whole-funitures-display"
@@ -166,9 +163,9 @@ function App() {
               <Route path="eye-glasses-display" element={<HomePage13 />} />
               <Route path="jeweries-display" element={<HomePage14 />} />
               <Route path="kitchen-utensils-display" element={<HomePage15 />} />
-              <Route path="bicycles-display" element={<HomePage16 />} />
-              <Route path="sheos-display" element={<HomePage17 />} />
+              <Route path="bicycles-display" element={<HomePage17 />} />
               <Route path="watches-display" element={<HomePage23 />} />
+              <Route path="sheos-display" element={<HomePage25 />} />
               <Route
                 path="classic-clothings-display"
                 element={<HomePage18 />}
@@ -179,7 +176,6 @@ function App() {
                 path="other-electronics-display"
                 element={<HomePage21 />}
               />
-              <Route path="headphones-display" element={<HomePage22 />} />
               <Route path="hand-bags-display" element={<HomePage24 />} />
 
               <Route
@@ -200,9 +196,7 @@ function App() {
               <Route path="jewelries-shop" element={<ShopPage13 />} />
               <Route path="watches-shop" element={<ShopPage14 />} />
               <Route path="cars-&-moto-bike-shop" element={<ShopPage15 />} />
-              <Route path="tv-&-radio-shop" element={<ShopPage16 />} />
               <Route path="phone-&-computers-shop" element={<ShopPage17 />} />
-              <Route path="headphones-shop" element={<ShopPage18 />} />
               <Route path="other-electronics-shop" element={<ShopPage19 />} />
               <Route path="bicycle-shop" element={<ShopPage20 />} />
               <Route path="kids-toy-shop" element={<ShopPage21 />} />
@@ -267,7 +261,9 @@ function App() {
 
               <Route
                 path="add-new-product"
-                element={currentUserExist ? <AddNewProductPage /> : <NotFound />}
+                element={
+                  currentUserExist ? <AddNewProductPage /> : <NotFound />
+                }
               />
               <Route path="store_location" element={<StoreLocationPage />} />
               <Route path="lookbook" element={<LookbookPage />} />

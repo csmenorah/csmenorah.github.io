@@ -12,17 +12,15 @@ export const homePages = [
   { id: 5, title: "Skin Care/ Body Lotions", href: "/skin-care-display"},
   { id: 13, title: "Eye Glasses", href: "/eye-glasses-display"},
   { id: 14, title: "Jewelries", href: "/jeweries-display"},
-  { id: 22, title: "Watches", href: "/watches-display"},
+  { id: 23, title: "Watches", href: "/watches-display"},
   { id: 6, title: "Cars/  Motobikes", href: "/cars-&-motobikes-display"},
-  { id: 7, title: "TV/  Radios", href: "/tv-&-radios-display"},
-  { id: 8, title: "Phones/  Computers", href: "/phones-&-computers-display"},
-  { id: 12, title: "Head Phones", href: "/headphones-display"},
-  { id: 21, title: "Other Electronics", href: "/other-electronics-display"},
+  { id: 7, title: "Electronics", href: "/electronics-display"},
   { id: 16, title: "Bicycles", href: "/bicycles-display"},
   { id: 9, title: "Kids Toys", href: "/kids-toys-display"},
   { id: 11, title: "Video Games", href: "/video-games-display"},
   { id: 15, title: "Kitchen Utensils", href: "/kitchen-utensils-display"},
-  { id: 22, title: "House Whole Funitures", href: "/house-whole-funitures-display"},
+  { id: 24, title: "House Whole Funitures", href: "/house-whole-funitures-display"},
+  { id: 25, title: "Home Tools", href: "/house-whole-assistive-tools"},
 ];
 
 export const shopList = [

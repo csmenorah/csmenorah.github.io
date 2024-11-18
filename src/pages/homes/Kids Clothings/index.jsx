@@ -1,12 +1,12 @@
 import Footer4 from "@/components/footers/PagesFooter";
 
 import Header4 from "@/components/headers/PagesHeader";
-import CategoryBanner from "@/components/homes/home-4/CategoryBanner";
-import Hero from "@/components/homes/home-4/Hero";
-import InsideCollextions from "@/components/homes/home-4/InsideCollextions";
-import LimitedEdition from "@/components/homes/home-4/LimitedEdition";
-import Testimonials from "@/components/homes/home-4/Testimonials";
-import TrendingProducts from "@/components/homes/home-4/TrendingProducts";
+import Features from "@/components/common/features/Features";
+import Hero from "@/components/homes/home-7/Hero";
+import Lookbook from "@/components/homes/home-7/Lookbook";
+import ProductsGrid from "@/components/homes/home-7/ProductsGrid";
+import ProductsSlider from "@/components/homes/home-7/ProductsSlider";
+import TrendingProducts from "@/components/homes/home-7/TrendingProducts";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
@@ -21,16 +21,16 @@ export default function HomePage4() {
         <Header4 />
         <main className="bg-grey-faf9f8 page-wrapper-2" style={{ padding: 0 }}>
           <Hero />
-          <div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
+          <div className="mb-4 mb-xl-5 pt-1 pb-5"></div>
           <TrendingProducts />
-          <div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
-          <CategoryBanner />
-          <div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
-          <Testimonials />
-          <div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
-          <InsideCollextions />
-          <div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
-          <LimitedEdition />
+          <div className="mb-4 mb-xl-5 pt-1 pb-5"></div>
+          <ProductsGrid />
+          <div className="mb-5 pb-4"></div>
+          <Lookbook />
+          <div className="mb-4 mb-xl-5 pt-1 pb-5"></div>
+          <ProductsSlider />
+          <div className="mb-4 mb-xl-5 pt-1 pb-5"></div>
+          <Features />
         </main>
         <Footer4 />
       </div>

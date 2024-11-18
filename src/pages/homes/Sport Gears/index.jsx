@@ -1,43 +1,50 @@
-import Features from "@/components/common/features/Features";
-import Footer10 from "@/components/footers/PagesFooter";
-import Header11 from "@/components/headers/PagesHeader";
-import BestSaller from "@/components/homes/home-11/BestSaller";
-import Categories from "@/components/homes/home-11/Categories";
-import GridBanner from "@/components/homes/home-11/GridBanner";
-import Hero from "@/components/homes/home-11/Hero";
-import RecentViewed from "@/components/homes/home-11/RecentViewed";
-import SpecialOffers from "@/components/homes/home-11/SpecialOffers";
-import TopDeals from "@/components/homes/home-11/TopDeals";
+import Footer18 from "@/components/footers/PagesFooter";
+
+import Header18 from "@/components/headers/PagesHeader";
+import Brands from "@/components/common/brands/Brands";
+import Banner from "@/components/homes/home-10/Banner";
+import BestSelling from "@/components/homes/home-10/BestSelling";
+import Blogs from "@/components/homes/home-10/Blogs";
+import GridBanner from "@/components/homes/home-10/GridBanner";
+import Hero from "@/components/homes/home-10/Hero";
+import Lookbook from "@/components/homes/home-10/Lookbook";
+import Trending from "@/components/homes/home-10/Trending";
+import VideoBanner from "@/components/homes/home-10/VideoBanner";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
-  title: "Home 11 || Uomo eCommerce Reactjs Template",
+  title: "Home 18 || Uomo eCommerce Reactjs Template",
   description: "Uomo eCommerce Reactjs Template",
 };
-export default function HomePage10() {
+export default function HomePage17() {
   return (
     <>
       <MetaComponent meta={metadata} />
-      <div className="theme-11 theme-18">
-        <Header11 />
+      <div className="theme-18">
+        <Header18 />
         <main style={{ padding: 0 }}>
           <Hero />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <TopDeals />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
+          <div className="container mw-1620 bg-white">
+            <div className="mb-3 mb-xl-5 pt-1 pb-2"></div>
+            <Brands />
+            <div className="mb-3 mb-xl-5 pt-1 pb-2"></div>
+            <Banner />
+            <div className="mb-4 pb-4 mb-xl-4 mt-xl-3 pt-xl-3 pb-xl-4"></div>
+            <Trending />
+          </div>
+          <div className="mb-4 pb-4 mb-xl-4 mt-xl-3 pt-xl-3 pb-xl-4"></div>
+          <VideoBanner />
+          <div className="mb-4 pb-4 mb-xl-4 mt-xl-3 pt-xl-3 pb-xl-4"></div>
           <GridBanner />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Categories />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <BestSaller />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <SpecialOffers />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <RecentViewed />
-          <div className="mb-3 mb-xl-5 pb-3 pt-1 pb-xl-5"></div>
-          <Features />
+          <div className="mb-4 pb-4 mb-xl-4 mt-xl-3 pt-xl-3 pb-xl-4"></div>
+          <Lookbook />
+          <div className="mb-4 pb-4 mb-xl-4 mt-xl-3 pt-xl-3 pb-xl-4"></div>
+          <BestSelling />
+          <div className="mb-4 pb-4 mb-xl-4 mt-xl-3 pt-xl-3 pb-xl-4"></div>
+          <Blogs />
+          <div className="mb-4 pb-4 mb-xl-4 mt-xl-3 pt-xl-3 pb-xl-4"></div>
         </main>
-        <Footer10 />
+        <Footer18 />
       </div>
     </>
   );
