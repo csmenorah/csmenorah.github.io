@@ -57,7 +57,7 @@ export default function ConfirmMessage({ img, msg, btnCall }) {
                 />
               </div>
             </div>
-            <div className="col-md-6 p-0 d-flex align-items-center">
+            {msg.length > 0 && <div className="col-md-6 p-0 d-flex align-items-center">
               <div
                 className="order-complete__message"
                 style={{ textAlign: "center" }}
@@ -78,7 +78,7 @@ export default function ConfirmMessage({ img, msg, btnCall }) {
                 <h3 style={{ fontSize: "20px" }}>{msg}</h3>
                 <p>Thank you</p>
               </div>
-            </div>
+            </div>}
           </div>
         </div>
       </div>

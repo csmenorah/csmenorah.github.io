@@ -16,7 +16,20 @@ export const openModalUserlogin = () => {
   pageOverlay.classList.add("page-overlay_visible");
   shopFilter.classList.add("aside_visible");
 };
+export const openModalErrorLogs = () => {
+  const pageOverlay = document.getElementById("pageOverlay");
+  const shopFilter = document.getElementById("userAside");
+  pageOverlay.classList.add("page-overlay_visible");
+  shopFilter.classList.add("aside_visible");
+};
 export const closeModalUserlogin = () => {
+  const pageOverlay = document.getElementById("pageOverlay");
+  const shopFilter = document.getElementById("userAside");
+  pageOverlay.classList.remove("page-overlay_visible");
+  shopFilter.classList.remove("aside_visible");
+  return true;
+};
+export const closeModalErrorLogs = () => {
   const pageOverlay = document.getElementById("pageOverlay");
   const shopFilter = document.getElementById("userAside");
   pageOverlay.classList.remove("page-overlay_visible");

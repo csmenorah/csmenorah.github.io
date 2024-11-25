@@ -101,8 +101,9 @@ import HomePage24 from "./pages/homes/Hand Bags";
 import HomePage23 from "./pages/homes/Watches";
 import ConfirmResetPasswordPage from "./pages/otherPages/confirm-reset-password";
 import AddNewProductPage from "./pages/dashboard/add_new_product";
+import ErrorLogs from "./components/asides/ErrorLogs";
 
-export const NewsletterContext = createContext()
+export const NewsletterContext = createContext();
 
 function App() {
   const [newsLetterDisplay, setNewsLetterDisplay] = useState(true);
@@ -115,24 +116,22 @@ function App() {
     }
   }, []);
   useEffect(() => {
-
     const authListener = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         setCurrentUserExist(true);
       }
     });
-    return () => authListener()
+    return () => authListener();
   }, []);
   const newsLetterDisplayFunc = (val) => {
     setNewsLetterDisplay(val);
-    console.log(newsLetterDisplay);
-  }
+  };
 
   const newsLetterContextEl = {
     newsLetterDisplay,
     newsLetterDisplayFunc,
-    setNewsLetterDisplay
-  }
+    setNewsLetterDisplay,
+  };
   return (
     <>
       <Svgs />
