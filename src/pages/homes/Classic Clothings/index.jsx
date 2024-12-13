@@ -10,8 +10,8 @@ import TrendingProducts from "@/components/homes/home-4/TrendingProducts";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
-  title: "Home 19 || Uomo eCommerce Reactjs Template",
-  description: "Uomo eCommerce Reactjs Template",
+  title: "Brown Commerce Classic Dressing",
+  description: "Brown Commerce",
 };
 export default function HomePage18() {
   return (

@@ -154,7 +154,7 @@ export default function PagesHeader() {
                       <User />
                     </Link>
                   </div>
-
+{/*
                   <Link className="header-tools__item" to="/account_wishlist">
                     <svg
                       width="20"
@@ -165,7 +165,7 @@ export default function PagesHeader() {
                     >
                       <use href="#icon_heart" />
                     </svg>
-                  </Link>
+                  </Link>*/}
 
                   <a
                     onClick={() => openCart()}

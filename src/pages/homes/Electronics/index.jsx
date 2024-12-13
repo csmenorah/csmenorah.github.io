@@ -12,8 +12,8 @@ import TopDeals from "@/components/homes/home-11/TopDeals";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
-  title: "Home 5 || Uomo eCommerce Reactjs Template",
-  description: "Uomo eCommerce Reactjs Template",
+  title: "Brown Commerce Eletronics",
+  description: "Brown Commerce",
 };
 export default function HomePage9() {
   return (

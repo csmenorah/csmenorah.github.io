@@ -13,8 +13,8 @@ import VideoBanner from "@/components/homes/home-10/VideoBanner";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
-  title: "Home 18 || Uomo eCommerce Reactjs Template",
-  description: "Uomo eCommerce Reactjs Template",
+  title: "Home 18 || Brown Commerce",
+  description: "Brown Commerce",
 };
 export default function HomePage17() {
   return (

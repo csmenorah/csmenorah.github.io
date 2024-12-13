@@ -6,8 +6,7 @@ import DashboardSidebar from "@/components/otherPages/DashboardSidebar";
 import MetaComponent from "@/components/common/MetaComponent";
 import AddNewProduct from "@/components/otherPages/addNewProduct";
 const metadata = {
-  title: "Dashboard Account Edit || Uomo eCommerce Reactjs Template",
-  description: "Uomo eCommerce Reactjs Template",
+  title: "Dashboard Account Edit",
 };
 export default function AddNewProductPage() {
   return (

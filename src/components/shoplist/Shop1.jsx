@@ -16,8 +16,7 @@ import {
   sortingOptions,
 } from "@/data/products/productCategories";
 
-
-export default function Shop1({products}) {
+export default function Shop1({ products, coverImage, banerTitle }) {
   const { toggleWishlist, isAddedtoWishlist } = useContextElement();
   const [selectedColView, setSelectedColView] = useState(4);
 
@@ -50,7 +49,7 @@ export default function Shop1({products}) {
             >
               <img
                 loading="lazy"
-                src="/assets/images/shop/shop_banner_character1.png"
+                src={coverImage}
                 width="1759"
                 height="420"
                 alt="Pattern"
@@ -60,7 +59,7 @@ export default function Shop1({products}) {
 
             <div className="shop-banner__content container position-absolute start-50 top-50 translate-middle">
               <h2 className="stroke-text h1 smooth-16 text-uppercase fw-bold mb-3 mb-xl-4 mb-xl-5">
-                Jackets & Coats
+                {banerTitle}
               </h2>
               <ul className="d-flex flex-wrap list-unstyled text-uppercase h6">
                 {menuCategories.map((elm, i) => (
@@ -153,7 +152,7 @@ export default function Shop1({products}) {
           className={`products-grid row row-cols-2 row-cols-md-3 row-cols-lg-${selectedColView}`}
           id="products-grid"
         >
-          {products51.map((elm, i) => (
+          {products.map((elm, i) => (
             <div key={i} className="product-card-wrapper">
               <div className="product-card mb-3 mb-md-4 mb-xxl-5">
                 <div className="pc__img-wrapper">
@@ -244,7 +243,7 @@ export default function Shop1({products}) {
                   {elm.colors && (
                     <div className="d-flex align-items-center mt-1">
                       {" "}
-                      <ColorSelection />{" "}
+                      <ColorSelection colors={elm.colors} />{" "}
                     </div>
                   )}
                   {elm.reviews && (
@@ -258,11 +257,11 @@ export default function Shop1({products}) {
                     </div>
                   )}
 
-                  <button
+                 { /*<button
                     className={`pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist ${
                       isAddedtoWishlist(elm.id) ? "active" : ""
                     }`}
-                    onClick={() => toggleWishlist(elm.id)}
+                    onClick={() => {toggleWishlist(elm.id), console.log(elm.id)}}
                     title="Add To Wishlist"
                   >
                     <svg
@@ -274,7 +273,7 @@ export default function Shop1({products}) {
                     >
                       <use href="#icon_heart" />
                     </svg>
-                  </button>
+                  </button>*/}
                 </div>
                 {elm.discont && (
                   <div className="pc-labels position-absolute top-0 start-0 w-100 d-flex justify-content-between">

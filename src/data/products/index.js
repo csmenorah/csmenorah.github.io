@@ -41,11 +41,14 @@ import { products29, products30, products31, products32 } from "./medical";
 import { products47, products48, products49 } from "./tools";
 import { products41 } from "./watches";
 
+
+
+
+
 export const allProducts = [
   ...products1,
   ...products2,
   ...products3,
-
   ...products4,
   ...products5,
   ...products6,
@@ -101,4 +104,5 @@ export const allProducts = [
   ...products57,
   ...products58,
   ...products59,
+  //...prods,
 ];

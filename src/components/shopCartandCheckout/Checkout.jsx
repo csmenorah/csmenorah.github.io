@@ -157,7 +157,7 @@ export default function Checkout() {
                   id="checkout_province"
                   placeholder="Province *"
                 />
-                <label htmlFor="checkout_province">Province *</label>
+                <label htmlFor="checkout_province">Province/ State *</label>
               </div>
             </div>
             <div className="col-md-12">

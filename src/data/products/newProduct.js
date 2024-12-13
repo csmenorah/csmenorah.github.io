@@ -1,23 +1,24 @@
 export const newProdCart = () => {
   return [
-    "clothes",
-    "electronics",
-    "glasses",
-    "house whole furniture",
-    "jewelries",
-    "kids toys",
-    "kitchen utensils",
-    "shoes",
-    "skin care",
-    "sport gears",
-    "vehicles",
-    "video games",
-    "watches",
+    "Dresses",
+    "Hand Bags",
+    "Electronics",
+    "Glasses",
+    "House Whole Furnitures",
+    "Jewelries",
+    "Kids Toys",
+    "Kitchen utensils",
+    "Shoes",
+    "Skin Care Products",
+    "Sport Gears",
+    "Vehicles",
+    "Video Games",
+    "Watches",
   ];
 };
 
 export const newProdClothingSub = () => {
-  return ["women", "men", "children"];
+  return ["Women", "Men", "Children", "All"];
 };
 
 export const newProdElectronicsSub = () => {

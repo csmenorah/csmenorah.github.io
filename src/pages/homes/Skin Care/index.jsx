@@ -10,8 +10,8 @@ import PopulerProducts from "@/components/homes/home-15/PopulerProducts";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
-  title: "Home 6 || Uomo eCommerce Reactjs Template",
-  description: "Uomo eCommerce Reactjs Template",
+  title: "Home 6 || Brown Commerce",
+  description: "Brown Commerce",
 };
 export default function HomePage12() {
   return (

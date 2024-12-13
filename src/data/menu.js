@@ -1,3 +1,5 @@
+
+
 export const homePages = [
   { id: 1, title: "Home", href: "/" },
   { id: 2, title: "Female Clothings", href: "/female-clothings-display"},
@@ -237,19 +239,19 @@ export const dashboardMenuItems = [
     href: "/account_edit",
     title: "Account Details",
   },
-  {
+  /*{
     id: 5,
     href: "/account_wishlist",
     title: "Wishlist",
-  },
+  },*/
   {
     id: 6,
     href: "/add-new-product",
     title: "Add New Product",
   },
-  {
+  /*{
     id: 7,
-    href: "/login_register",
+    //href: "/login_register",
     title: "Logout",
-  },
+  },*/
 ];

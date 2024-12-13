@@ -7,7 +7,7 @@ import { products51 } from "@/data/products/fashion";
 import { useEffect, useState } from "react";
 
 export default function Products2() {
-  const { toggleWishlist, isAddedtoWishlist } = useContextElement();
+ //const { toggleWishlist, isAddedtoWishlist } = useContextElement();
   const { addProductToCart, isAddedToCartProducts } = useContextElement();
   const [currentCategory, setCurrentCategory] = useState(filterCategories[0]);
   // eslint-disable-next-line no-unused-vars
@@ -109,7 +109,7 @@ export default function Products2() {
                       </span>
                     </div>
 
-                    <button
+                    {/*<button
                       className={`pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist ${
                         isAddedtoWishlist(elm.id) ? "active" : ""
                       }`}
@@ -125,7 +125,7 @@ export default function Products2() {
                       >
                         <use href="#icon_heart" />
                       </svg>
-                    </button>
+                    </button>*/}
                   </div>
                 </div>
               </div>

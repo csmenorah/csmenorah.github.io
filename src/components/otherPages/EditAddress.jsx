@@ -1,4 +1,30 @@
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { useEffect } from "react";
+import { db } from "../../../firebase/firebaseUtils";
+import { useContextElement } from "@/context/Context";
+
 export default function EditAddress() {
+  const { currentUserDetails } = useContextElement();
+  
+  let billingAddress = "";
+  useEffect(() => {
+    const qBilling = query(
+      collection(db, "users"),
+      where("email", "==", currentUserDetails.email)
+    );
+    const querySnapshotBilling = getDocs(qBilling);
+    querySnapshotBilling.then((result) => {
+      result.forEach((doc) => {
+        let newDoc = { id: doc.id, ...doc.data() };
+        // doc.data() is never undefined for query doc snapshots
+        billingAddress = newDoc;
+        console.log(doc.id, " => ", doc.data());
+        console.log(newDoc);
+      });
+    });
+  }, []);
+
+
   return (
     <div className="col-lg-9">
       <div className="page-content my-account__address">
@@ -9,29 +35,36 @@ export default function EditAddress() {
           <div className="my-account__address-item">
             <div className="my-account__address-item__title">
               <h5>Billing Address</h5>
-              <a href="#">Edit</a>
+              <a href="/shop_checkout">Edit</a>
             </div>
             <div className="my-account__address-item__detail">
-              <p>Daniel Robinson</p>
-              <p>1418 River Drive, Suite 35 Cottonhall, CA 9622</p>
-              <p>United States</p>
+              <p>{`${billingAddress.firstName} ${billingAddress.lastName}`}</p>
+              <p>{billingAddress.company}</p>
+              <p>{billingAddress.street}</p>
+              <p>{billingAddress.city}</p>
+              <p>{billingAddress.zip}</p>
+              <p>{billingAddress.state}</p>
               <br />
-              <p>sale@uomo.com</p>
-              <p>+1 246-345-0695</p>
+              <p>{billingAddress.email}</p>
+              <p>{billingAddress.phone}</p>
             </div>
           </div>
           <div className="my-account__address-item">
             <div className="my-account__address-item__title">
               <h5>Shipping Address</h5>
-              <a href="#">Edit</a>
+              <a href="/account_edit">Edit</a>
             </div>
             <div className="my-account__address-item__detail">
-              <p>Daniel Robinson</p>
-              <p>1418 River Drive, Suite 35 Cottonhall, CA 9622</p>
-              <p>United States</p>
+              <p>{`${currentUserDetails.firstName} ${currentUserDetails.lastName}`}</p>
+              <p>{currentUserDetails.streetOne}</p>
+              <p>{currentUserDetails.streetTwo}</p>
+              <p>{currentUserDetails.city}</p>
+              <p>{currentUserDetails.zip}</p>
+              <p>{currentUserDetails.state}</p>
+              <p>{currentUserDetails.country}</p>
               <br />
-              <p>sale@uomo.com</p>
-              <p>+1 246-345-0695</p>
+              <p>{currentUserDetails.email}</p>
+              <p>{currentUserDetails.phone}</p>
             </div>
           </div>
         </div>

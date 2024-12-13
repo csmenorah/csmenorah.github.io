@@ -1,26 +1,26 @@
 import { Link } from "react-router-dom";
+import { useContextElement } from "@/context/Context";
+
+
 
 export default function Dashboard() {
+  const { currentUserDetails } = useContextElement();
   return (
     <div className="col-lg-9">
       <div className="page-content my-account__dashboard">
         <p>
-          Hello <strong>alitfn58</strong> (not <strong>alitfn58?</strong>
-          <Link to="/login_register">Log out</Link>)
+          Hello <strong>{currentUserDetails.displayName}</strong>
         </p>
         <p>
-          From your account dashboard you can view your
-          <Link className="unerline-link" to="/account_orders">
-            recent orders
-          </Link>
-          , manage your
-          <Link className="unerline-link" to="/account_edit_address">
-            shipping and billing addresses
-          </Link>
-          , and
-          <Link className="unerline-link" to="/account_edit">
-            edit your password and account details.
-          </Link>
+          From your account dashboard you can view your <strong><Link className="unerline-link" to="/account_orders">
+            Recent Orders
+          </Link></strong>
+          , manage your <strong><Link className="unerline-link" to="/account_edit_address">
+            Shipping and Billing Addresses
+          </Link></strong>
+          , and <strong><Link className="unerline-link" to="/account_edit">
+            Edit your Password and Account Details.
+          </Link></strong>
         </p>
       </div>
     </div>

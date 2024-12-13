@@ -6,8 +6,7 @@ import EditAccount from "@/components/otherPages/EditAccount";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
-  title: "Dashboard Account Edit || Uomo eCommerce Reactjs Template",
-  description: "Uomo eCommerce Reactjs Template",
+  title: "Dashboard Account Edit",
 };
 export default function AccountEditPage() {
   return (

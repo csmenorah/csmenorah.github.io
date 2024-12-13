@@ -12,8 +12,8 @@ import Footer20 from "@/components/footers/PagesFooter";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
-  title: "Home 20 || Uomo eCommerce Reactjs Template",
-  description: "Uomo eCommerce Reactjs Template",
+  title: "Brown Commerce Coporate Wears",
+  description: "Brown Commerce",
 };
 export default function HomePage19() {
   return (

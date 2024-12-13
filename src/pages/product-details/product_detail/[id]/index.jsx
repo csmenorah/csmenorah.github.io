@@ -1,6 +1,6 @@
 import Footer1 from "@/components/footers/PagesFooter";
-
 import Header1 from "@/components/headers/PagesHeader";
+import { useContextElement } from "@/context/Context";
 
 import RelatedSlider from "@/components/singleProduct/RelatedSlider";
 import SingleProduct7 from "@/components/singleProduct/SingleProduct7";
@@ -14,10 +14,11 @@ const metadata = {
   description: "Uomo eCommerce Reactjs Template",
 };
 export default function ProductDetailsPage12() {
+  let {dataBaseProducts} = useContextElement()
   let params = useParams();
   const productId = params.id;
   const product =
-    allProducts.filter((elm) => elm.id == productId)[0] || allProducts[0];
+    dataBaseProducts.filter((elm) => elm.id == productId)[0] || allProducts[0];
   return (
     <>
       <MetaComponent meta={metadata} />

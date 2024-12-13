@@ -14,21 +14,21 @@ const metadata = {
 export default function ShopPage6() {
   const [products, setProducts] = useState([]);
   const coverImage = "/assets/images/african-wears-long.jpeg";
-  const banerTitle = "Other Electronics";
+  const banerTitle = "Bicycles";
 
   useEffect(() => {
     const productsArray = [];
     const q = query(
       collection(db, "products"),
-      where("cartegory", "==", "Electronics")
+      where("cartegory", "==", "Bicycle")
     );
     const querySnapshot = getDocs(q);
     querySnapshot.then((result) => {
       result.forEach((product) => {
-        if (product.data().subCart == "Other Electronics") {
+        //if (product.data().subCart == "Bicycle") {
         productsArray.push({ ...product.data(), id: product.id });
         setProducts(productsArray);
-        }
+        //}
       });
     });
   }, []);

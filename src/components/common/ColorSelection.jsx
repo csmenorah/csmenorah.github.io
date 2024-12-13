@@ -18,18 +18,18 @@ const swatchColors = [
   },
 ];
 
-export default function ColorSelection() {
+export default function ColorSelection({colors}) {
   const [currentIndex, setCurrentIndex] = useState(0);
   return (
     <>
-      {swatchColors.map((elm, i) => (
+      {colors.map((elm, i) => (
         <a
           key={i}
           onClick={() => setCurrentIndex(i)}
           className={`swatch-color pc__swatch-color  ${
             i == currentIndex ? "swatch_active" : ""
           }`}
-          style={elm.style}
+          style={{color: elm}}
         ></a>
       ))}
     </>

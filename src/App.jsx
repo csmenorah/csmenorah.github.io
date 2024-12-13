@@ -49,6 +49,7 @@ import HomePage21 from "./pages/homes/Africa Wears";
 import HomePage25 from "./pages/homes/Shoes";
 import HomePage26 from "./pages/homes/HomeworkTools";
 import FemaleClothings from "./pages/shoplist/female-clothings";
+import ShopItermList from "./pages/shoplist/shopitermlist";
 import ShopPage2 from "./pages/shoplist/men-clothings";
 import ShopPage3 from "./pages/shoplist/children-clothings";
 import ShopPage4 from "./pages/shoplist/classic-dresses";
@@ -218,6 +219,10 @@ function App() {
               <Route
                 path="external-product/:id"
                 element={<ProductDetailsPage3 />}
+              />
+              <Route
+                path="shop list/:productTitle"
+                element={<ShopItermList />}
               />
               <Route
                 path="grouped-product/:id"

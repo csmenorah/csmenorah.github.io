@@ -9,8 +9,8 @@ import HotDeals from "@/components/homes/home-3/HotDeals";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
-  title: "Home 2 || Uomo eCommerce Reactjs Template",
-  description: "Uomo eCommerce Reactjs Template",
+  title: "Brown Commerce Female Clothings",
+  description: "Brown Commerce",
 };
 export default function HomePage2() {
   return (

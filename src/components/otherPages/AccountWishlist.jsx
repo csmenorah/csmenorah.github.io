@@ -4,15 +4,54 @@ import { Link } from "react-router-dom";
 import { Navigation } from "swiper/modules";
 import { useEffect, useState } from "react";
 import { allProducts } from "@/data/products";
+import { collection, getDocs, query } from "firebase/firestore";
+import { db } from "../../../firebase/firebaseUtils";
 
 export default function AccountWishlist() {
   const { wishList, toggleWishlist } = useContextElement();
+  let [dataBaseProducts, setDataBaseProducts] = useState([
+    {
+      cartegory: "Dresses",
+      colors: ["#c9acac"],
+      description: "",
+      id: "AuiLpHgnMDwG7xoR2cD3",
+      imgAlt: "Cropped Faux leather Jacket",
+      imgSrc: ["/assets/images/home/demo1/product-1-1.jpg"],
+      price: "25",
+      productRating: 0,
+      productSizes: ["XS"],
+      qualityOfProduct: "Fairly Use",
+      reviews: ["8k+ reviews"],
+      subCart: "Women Jacket",
+      title: "slim Jean",
+    },
+  ]);
   const [wishlistProducts, setWishlistProducts] = useState(
-    allProducts.filter((elm) => wishList.includes(elm.id))
+    dataBaseProducts.filter((elm) => wishList.includes(elm.id))
   );
+
   useEffect(() => {
-    setWishlistProducts(allProducts.filter((elm) => wishList.includes(elm.id)));
+    const q = query(collection(db, "products"));
+    const querySnapshot = getDocs(q);
+    querySnapshot
+      .then((result) => {
+        result.forEach((doc) => {
+          let newDoc = { id: doc.id, ...doc.data() };
+          // doc.data() is never undefined for query doc snapshots
+          dataBaseProducts.push(newDoc);
+          //console.log(dataBaseProducts)
+        });
+      })
+      .then(() => {
+        setWishlistProducts(
+          dataBaseProducts.filter((elm) => {
+            console.log(dataBaseProducts);
+            wishList.includes(elm.id);
+          })
+        );
+      });
   }, [wishList]);
+
 
   return (
     <div className="col-lg-9">

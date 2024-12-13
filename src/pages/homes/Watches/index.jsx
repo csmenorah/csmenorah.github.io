@@ -11,8 +11,8 @@ import Trending from "@/components/homes/home-19/Trending";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
-  title: "Home 6 || Uomo eCommerce Reactjs Template",
-  description: "Uomo eCommerce Reactjs Template",
+  title: "Home 6 || Brown Commerce",
+  description: "Brown Commerce",
 };
 export default function HomePage23() {
   return (

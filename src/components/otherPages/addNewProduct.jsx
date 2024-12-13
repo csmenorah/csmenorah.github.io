@@ -1,11 +1,25 @@
 import { useState, useEffect } from "react";
 import { newProdCart } from "@/data/products/newProduct";
 import { newProdClothingSub } from "@/data/products/newProduct";
-import { collection, doc, setDoc, getDoc, getDocs } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  setDoc,
+  addDoc,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 import { db } from "../../../firebase/firebaseUtils";
 import ConfirmMessage from "../modals/ConfirmMessage";
 import ErrorLogs from "../asides/ErrorLogs";
-import { openModalErrorLogs, closeModalErrorLogs } from "@/utlis/aside";
+import SuccessLogs from "../asides/SuccessLogs";
+import {
+  openModalErrorLogs,
+  closeModalErrorLogs,
+  closeModalSuccessLogs,
+  openModalSuccessLogs,
+} from "@/utlis/aside";
 import { useNavigate } from "react-router-dom";
 
 export default function AddNewProduct() {
@@ -15,11 +29,12 @@ export default function AddNewProduct() {
   const [productType, setProductType] = useState("");
   const [productPrice, setProductPrice] = useState("");
   const [productQuantity, setProductQuantity] = useState("");
+  const [productQuality, setProductQuality] = useState("");
   const [productDescription, setProductDescription] = useState("");
-  const [color1, setColor1] = useState(null);
-  const [color2, setColor2] = useState(null);
-  const [color3, setColor3] = useState(null);
-  const [color4, setColor4] = useState(null);
+  const [color1, setColor1] = useState("");
+  const [color2, setColor2] = useState("");
+  const [color3, setColor3] = useState("");
+  const [color4, setColor4] = useState("");
   const [image1, setImage1] = useState(null);
   const [image2, setImage2] = useState(null);
   const [image3, setImage3] = useState(null);
@@ -76,6 +91,8 @@ export default function AddNewProduct() {
       setProductPrice(value);
     } else if (name === "productQuantity") {
       setProductQuantity(value);
+    } else if (name === "productQuality") {
+      setProductQuality(value);
     } else if (name === "whyChoseProduct1") {
       setWhyChoseProduct1(value);
     } else if (name === "whyChoseProduct2") {
@@ -93,14 +110,17 @@ export default function AddNewProduct() {
 
   const addProducts = async () => {
     const data = {
-      productTitle,
-      productCartegory,
-      productType,
-      productPrice,
-      productQuantity,
+      title: productTitle,
+      cartegory: productCartegory,
+      subCart: productType,
+      qualityOfProduct: productQuality,
+      quontity: productQuantity,
       productRating: 0,
-      productDescription,
-      ProductReviews: [],
+      description: productDescription,
+      imgSrc: ["/assets/images/home/demo1/product-1-1.jpg"],
+      imgAlt: "Cropped Faux leather Jacket",
+      price: productPrice,
+      reviews: ["8k+ reviews"],
     };
     if (productSizeXL === true) {
       productSizes.push("XL");
@@ -146,7 +166,7 @@ export default function AddNewProduct() {
     }
 
     if (productColors.length > 0) {
-      data.productColors = productColors;
+      data.colors = productColors;
     }
     if (whyChoseProduct.length > 0) {
       data.whyChoseProduct = whyChoseProduct;
@@ -158,14 +178,16 @@ export default function AddNewProduct() {
   };
   const handleSubmit = async () => {
     addProducts().then(async (data) => {
-      const productRef = doc(db, "products", productTitle);
-      await setDoc(productRef, { ...data });
+      const docRef = await addDoc(collection(db, "products"), data);
     });
   };
   const submit = async () => {
-    const docRef = doc(db, "products", productTitle);
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
+    const querry = query(
+      collection(db, "products"),
+      where("title", "==", productTitle)
+    );
+    const querySnapshot = await getDocs(querry);
+    if (querySnapshot.size > 0) {
       setProductTitleExist(
         "Product with title already Exist, Do you want to update product"
       );
@@ -176,7 +198,7 @@ export default function AddNewProduct() {
           resetForm();
         })
         .then(() => {
-          setShowConfirm(true);
+          openModalSuccessLogs();
         });
     }
   };
@@ -187,6 +209,7 @@ export default function AddNewProduct() {
     setproductUserCartegory("");
     setProductType("");
     setProductQuantity("");
+    setProductQuality("");
     setProductDescription("");
     setWhyChoseProduct1("");
     setWhyChoseProduct2("");
@@ -194,7 +217,6 @@ export default function AddNewProduct() {
     setWhyChoseProduct4("");
     setWhyChoseProduct5("");
     setProductPrice("");
-    setProductQuantity("");
     setColor1("");
     setColor2("");
     setColor3("");
@@ -215,16 +237,18 @@ export default function AddNewProduct() {
       pageOverlay.removeEventListener("click", closeModalErrorLogs);
     };
   }, []);
+
+  useEffect(() => {
+    const pageOverlay = document.getElementById("pageOverlay");
+
+    pageOverlay.addEventListener("click", closeModalSuccessLogs);
+
+    return () => {
+      pageOverlay.removeEventListener("click", closeModalSuccessLogs);
+    };
+  }, []);
   return (
     <>
-      {showConfirm && (
-        <ConfirmMessage
-          img={"/assets/images/upload-image.svg"}
-          msg={"Visit the products page to make changes to product"}
-          btnCall={() => location.reload("/add-new-product")}
-        />
-      )}
-      <ErrorLogs title={"Product Upload Error"} errors={productTitleExist} />
       <div className="col-lg-9">
         <div className="page-content my-account__edit">
           <div className="my-account__edit-form">
@@ -270,7 +294,7 @@ export default function AddNewProduct() {
                     <label htmlFor="product_cart">Product Cartegory</label>
                   </div>
                 </div>
-                {productCartegory === "clothes" && (
+                {productCartegory === "Dresses" && (
                   <div className="col-md-12">
                     <p>Product Sizies</p>
                     <div
@@ -528,6 +552,21 @@ export default function AddNewProduct() {
                     <input
                       type="text"
                       className="form-control"
+                      id="product_quality"
+                      placeholder="Product Quality"
+                      //required
+                      name="productQuality"
+                      value={productQuality}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="product_quantity">Product Quality</label>
+                  </div>
+                </div>
+                <div className="col-md-12">
+                  <div className="form-floating my-3">
+                    <input
+                      type="text"
+                      className="form-control"
                       id="product_price"
                       placeholder="Product Price in USD"
                       //required
@@ -553,6 +592,7 @@ export default function AddNewProduct() {
                     <label htmlFor="product_quantity">Product Quantity</label>
                   </div>
                 </div>
+
                 <div className="col-md-12">
                   <div className="form-floating my-3">
                     <textarea
@@ -784,6 +824,11 @@ export default function AddNewProduct() {
           </div>
         </div>
       </div>
+      <SuccessLogs
+        title="Product Upload Success"
+        success={"Visit the products page to make changes to product"}
+      />
+      <ErrorLogs title={"Product Upload Error"} errors={productTitleExist} />
     </>
   );
 }

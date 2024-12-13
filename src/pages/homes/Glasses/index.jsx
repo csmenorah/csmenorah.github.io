@@ -13,8 +13,8 @@ import Brands from "@/components/common/brands/Brands";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
-  title: "Home 14 || Uomo eCommerce Reactjs Template",
-  description: "Uomo eCommerce Reactjs Template",
+  title: "Brown Commerce Glasses",
+  description: "Brown Commerce",
 };
 export default function HomePage13() {
   return (

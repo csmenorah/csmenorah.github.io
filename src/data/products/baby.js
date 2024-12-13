@@ -1,3 +1,5 @@
+import { getDocs, collection, query } from "firebase/firestore";
+
 export const products43 = [
   {
     id: 495,

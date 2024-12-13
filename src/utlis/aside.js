@@ -22,6 +22,12 @@ export const openModalErrorLogs = () => {
   pageOverlay.classList.add("page-overlay_visible");
   shopFilter.classList.add("aside_visible");
 };
+export const openModalSuccessLogs = () => {
+  const pageOverlay = document.getElementById("pageOverlay");
+  const shopFilter = document.getElementById("userAside");
+  pageOverlay.classList.add("page-overlay_visible");
+  shopFilter.classList.add("aside_visible");
+};
 export const closeModalUserlogin = () => {
   const pageOverlay = document.getElementById("pageOverlay");
   const shopFilter = document.getElementById("userAside");
@@ -30,6 +36,13 @@ export const closeModalUserlogin = () => {
   return true;
 };
 export const closeModalErrorLogs = () => {
+  const pageOverlay = document.getElementById("pageOverlay");
+  const shopFilter = document.getElementById("userAside");
+  pageOverlay.classList.remove("page-overlay_visible");
+  shopFilter.classList.remove("aside_visible");
+  return true;
+};
+export const closeModalSuccessLogs = () => {
   const pageOverlay = document.getElementById("pageOverlay");
   const shopFilter = document.getElementById("userAside");
   pageOverlay.classList.remove("page-overlay_visible");

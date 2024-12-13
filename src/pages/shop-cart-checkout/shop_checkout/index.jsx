@@ -4,8 +4,8 @@ import Header1 from "@/components/headers/PagesHeader";
 import Checkout from "@/components/shopCartandCheckout/Checkout";
 import ChectoutSteps from "@/components/shopCartandCheckout/ChectoutSteps";
 const metadata = {
-  title: "Shop Checkout || Uomo eCommerce Reactjs Template",
-  description: "Uomo eCommerce Reactjs Template",
+  title: "Shop Checkout ",
+  description: "",
 };
 
 export default function ShopCheckoutPage() {
