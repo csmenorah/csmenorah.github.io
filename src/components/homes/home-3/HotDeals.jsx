@@ -3,13 +3,13 @@ import { products4 } from "@/data/products/fashion";
 import { Link } from "react-router-dom";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import CountDownComponent from "@/components/common/CountDownComponent";
 
-export default function HotDeals() {
+export default function HotDeals({ products }) {
   const { toggleWishlist, isAddedtoWishlist } = useContextElement();
   const { setQuickViewItem } = useContextElement();
   const { addProductToCart, isAddedToCartProducts } = useContextElement();
+
   const swiperOptions = {
     autoplay: {
       delay: 5000,
@@ -59,7 +59,7 @@ export default function HotDeals() {
           </div>
 
           <Link
-            to="/shop-1"
+            to="/female-clothings-shop"
             className="btn-link default-underline text-uppercase fw-medium mt-3"
           >
             View All
@@ -71,7 +71,7 @@ export default function HotDeals() {
               className="swiper-container js-swiper-slider"
               {...swiperOptions}
             >
-              {products4.map((elm, i) => (
+              {products.map((elm, i) => (
                 <SwiperSlide
                   key={i}
                   className="swiper-slide product-card product-card_style3"
@@ -88,7 +88,7 @@ export default function HotDeals() {
                       />
                       <img
                         loading="lazy"
-                        src={elm.imgSrc2}
+                        src={elm.imgSrc}
                         width="258"
                         height="313"
                         alt="Cropped Faux leather Jacket"
@@ -102,7 +102,7 @@ export default function HotDeals() {
                       <Link to={`/product-detail/${elm.id}`}>{elm.title}</Link>
                     </h6>
                     <div className="product-card__price d-flex align-items-center">
-                      <span className="money price-old">${elm.oldPrice}</span>
+                      {/*<span className="money price-old">${elm.oldPrice}</span>*/}
                       <span className="money price text-secondary">
                         ${elm.price}
                       </span>
@@ -142,7 +142,7 @@ export default function HotDeals() {
                           </svg>
                         </span>
                       </button>
-                      <button
+                      {/*<button
                         className={`pc__btn-wl bg-transparent border-0 js-add-wishlist ${
                           isAddedtoWishlist(elm.id) ? "active" : ""
                         }`}
@@ -158,7 +158,7 @@ export default function HotDeals() {
                         >
                           <use href="#icon_heart" />
                         </svg>
-                      </button>
+                      </button>*/}
                     </div>
                   </div>
                 </SwiperSlide>

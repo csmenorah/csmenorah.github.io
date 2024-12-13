@@ -19,7 +19,7 @@ export default function Products4() {
               </h6>
               <h3 className="text-white mb-3">Sporting Gears</h3>
               <Link
-                to="/shop-1"
+                to="/sports-gear-shop"
                 className="btn-link default-underline text-uppercase text-white fw-medium"
               >
                 Shop Now
@@ -42,7 +42,7 @@ export default function Products4() {
               </h6>
               <h3 className="text-white mb-3">House Whole Funitures</h3>
               <Link
-                to="/shop-1"
+                to="/house-whole-funitures-shop"
                 className="btn-link default-underline text-uppercase text-white fw-medium"
               >
                 Shop Now

@@ -21,7 +21,7 @@ export default function Products3() {
             <strong>Cars</strong> Collection
           </h3>
           <Link
-            to="/shop-1"
+            to="/cars-&-moto-bike-shop"
             className="btn-link default-underline text-uppercase fw-medium mt-3"
             style={{ color: "white" }}
           >

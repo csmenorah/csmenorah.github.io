@@ -35,7 +35,7 @@ export default function Hero() {
           <div className="slideshow-character position-absolute bottom-0 pos_right-center">
             <img
               loading="lazy"
-              src="/assets/images/home/demo3/slideshow-character1.png"
+              src="/assets/images/female1.avif"
               width="542"
               height="733"
               alt="Woman Fashion 1"
@@ -73,7 +73,7 @@ export default function Hero() {
           <div className="slideshow-character position-absolute bottom-0 pos_right-center">
             <img
               loading="lazy"
-              src="/assets/images/slideshow-character1.png"
+              src="https://www.esther.com.au/cdn/shop/files/GimleeDress-PurplePrint43240281_2.jpg?crop=region&crop_height=2581&crop_left=103&crop_top=0&crop_width=1729&v=1733363825&width=1936"
               width="400"
               height="733"
               alt="Woman Fashion 1"
@@ -111,7 +111,7 @@ export default function Hero() {
           <div className="slideshow-character position-absolute bottom-0 pos_right-center">
             <img
               loading="lazy"
-              src="/assets/images/slideshow-character2.png"
+              src="https://image.kilimall.com/kenya/shop/store/goods/6839/2021/06/6839_06777037005069263.jpg"
               width="400"
               height="690"
               alt="Woman Fashion 2"
