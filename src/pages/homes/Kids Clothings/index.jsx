@@ -25,10 +25,10 @@ export default function HomePage4() {
           <TrendingProducts />*/}
           <div className="mb-4 mb-xl-5 pt-1 pb-5"></div>
           <ProductsGrid />
-          <div className="mb-5 pb-4"></div>
+          {/*<div className="mb-5 pb-4"></div>
           <Lookbook />
           <div className="mb-4 mb-xl-5 pt-1 pb-5"></div>
-          <ProductsSlider />
+          <ProductsSlider />*/}
           <div className="mb-4 mb-xl-5 pt-1 pb-5"></div>
           <Features />
         </main>

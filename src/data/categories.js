@@ -164,7 +164,8 @@ export const categoryBanners = [
 export const gridBannerItems = [
   {
     id: 1,
-    imgSrc: "/assets/images/home/demo4/grid-banner-1.jpg",
+    imgSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo4%2Fgrid-banner-1.jpg&w=750&q=75",
     imgWidth: 690,
     imgHeight: 450,
     category: "Basic Collection",

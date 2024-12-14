@@ -21,14 +21,14 @@ export default function HomePage18() {
         <Header19 />
         <main className="page-wrapper" style={{ padding: 0 }}>
           <Hero />
-          <div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
-          <TrendingProducts />
+          {/*<div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
+          <TrendingProducts />**/}
           <div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
           <CategoryBanner />
-          <div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
+          {/*<div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
           <Testimonials />
           <div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
-          <InsideCollextions />
+          <InsideCollextions />*/}
           <div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
           <LimitedEdition />
         </main>

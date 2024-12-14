@@ -1370,39 +1370,45 @@ export const products13 = [
 export const products14 = [
   {
     id: 146,
-    imgSrc: "/assets/images/home/demo7/product-11.jpg",
-    title: "Loose Fit Sports Shirt",
+    imgSrc:
+      "https://files.sophie.co.ke/2023/01/2021-new-kids-clothing-sets-spring-and-a_main-4_5796.jpg",
+    title: "Kids Sweat Pants",
     //price: 17,
   },
   {
     id: 147,
-    imgSrc: "/assets/images/home/demo7/product-12.jpg",
-    title: "Seamless Leggings High Waist",
+    imgSrc:
+      "https://sc04.alicdn.com/kf/Hbdd017d186294b8d94feb77f48dbeba7L/238987180/Hbdd017d186294b8d94feb77f48dbeba7L.jpg",
+    title: "Kid Sweat Pants",
     //price: 129,
   },
   {
     id: 148,
-    imgSrc: "/assets/images/home/demo7/product-13.jpg",
-    title: "Cropped Sports Top",
+    imgSrc:
+      "https://cdn.shopify.com/s/files/1/0427/6659/8301/files/kid-style-clothes.jpg?v=1707318863",
+    title: "Rain Coats",
     //price: 129,
   },
   {
     id: 149,
-    imgSrc: "/assets/images/home/demo7/product-14.jpg",
-    title: "Sports Tank Top",
+    imgSrc:
+      "https://s.alicdn.com/@sc04/kf/H5ff7d9ea3a7542f7845f8ef28d7f3e109.jpg_720x720q50.jpg",
+    title: "African Wear",
     //price: 17,
   },
   {
     id: 150,
-    imgSrc: "/assets/images/home/demo7/product-15.jpg",
-    title: "Stainless Steel Water Bottle",
+    imgSrc:
+      "https://media.istockphoto.com/id/524161848/photo/portrait-of-a-cute-little-girl-in-fashionable-clothes.jpg?s=612x612&w=0&k=20&c=tRrXXHXvcpYOzWew65Z8wcPOIARub29TJd28-McR42Y=",
+    title: "Stylish",
     //price: 129,
   },
   {
     id: 151,
-    imgSrc: "/assets/images/home/demo7/product-16.jpg",
-    title: "Hooded Track Jacket",
-    price: 129,
+    imgSrc:
+      "https://media.nihalfashions.com/media/catalog/product/cache/441933f201159ac6aa81e856d506a0a3/b/l/black-imported-boys-indo-western-nkk-805.jpg",
+    title: "Classic",
+    //price: 129,
   },
 ];
 export const products15 = [

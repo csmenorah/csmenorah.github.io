@@ -80,8 +80,9 @@ export const slides3 = [
 export const slides4 = [
   {
     id: 1,
-    bgImg: "/assets/images/home/demo4/slider1.png",
-    markImg: "/assets/images/home/demo4/slider_mark.png",
+    bgImg:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo4%2Fslider1.png&w=640&q=75",
+    markImg: "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo4%2Fslider_mark.png&w=750&q=75",
     title: "The Classics",
     description: "An exclusive selection of this season's trends.",
     characterImgWidth: 493,
@@ -89,8 +90,9 @@ export const slides4 = [
   },
   {
     id: 2,
-    bgImg: "/assets/images/home/demo4/slider2.png",
-    markImg: "/assets/images/home/demo4/slider_mark.png",
+    bgImg:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo4%2Fslider2.png&w=640&q=75",
+    markImg: "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo4%2Fslider_mark.png&w=750&q=75",
     title: "The Classics",
     description: "An exclusive selection of this season's trends.",
     characterImgWidth: 490,
@@ -98,8 +100,9 @@ export const slides4 = [
   },
   {
     id: 3,
-    bgImg: "/assets/images/home/demo4/slider3.png",
-    markImg: "/assets/images/home/demo4/slider_mark.png",
+    bgImg:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo4%2Fslider3.png&w=750&q=75",
+    markImg: "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo4%2Fslider_mark.png&w=750&q=75",
     title: "The Classics",
     description: "An exclusive selection of this season's trends.",
     characterImgWidth: 675,
@@ -110,7 +113,7 @@ export const slides5 = [
   {
     id: 1,
     slideshowImg: "/assets/images/home/demo4/slider1.png",
-    bgImg: "/assets/images/home/demo4/slider_mark.png",
+    bgImg: "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo4%2Fslider_mark.png&w=750&q=75",
     title: "The Classics",
     description: "An exclusive selection of this season's trends.",
     imgWidth: "493",
@@ -121,7 +124,7 @@ export const slides5 = [
   {
     id: 2,
     slideshowImg: "/assets/images/home/demo4/slider2.png",
-    bgImg: "/assets/images/home/demo4/slider_mark.png",
+    bgImg: "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo4%2Fslider_mark.png&w=750&q=75",
     title: "The Classics",
     description: "An exclusive selection of this season's trends.",
     imgWidth: "490",
@@ -132,7 +135,7 @@ export const slides5 = [
   {
     id: 3,
     slideshowImg: "/assets/images/home/demo4/slider3.png",
-    bgImg: "/assets/images/home/demo4/slider_mark.png",
+    bgImg: "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo4%2Fslider_mark.png&w=750&q=75",
     title: "The Classics",
     description: "An exclusive selection of this season's trends.",
     imgWidth: "675",

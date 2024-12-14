@@ -30,7 +30,7 @@ export default function ProductsGrid() {
               <div key={i} className="product-card-wrapper overflow-hidden">
                 <div className="product-card mb-2 mb-md-3">
                   <div className="pc__img-wrapper">
-                    <Link to={`/product-detail/${elm.id}`}>
+                    <Link to={`/children-clothings-shop`}>
                       <img
                         loading="lazy"
                         src={elm.imgSrc}
@@ -45,9 +45,7 @@ export default function ProductsGrid() {
                   <div className="pc__info position-relative bg-body">
                     <div className="position-relative">
                       <h6 className="pc__title">
-                        <Link to={`/product-detail/${elm.id}`}>
-                          {elm.title}
-                        </Link>
+                        <Link to={`/children-clothings-shop`}>{elm.title}</Link>
                       </h6>
                       <div className="product-card__price d-flex">
                         <span className="money price">{elm.price}</span>
