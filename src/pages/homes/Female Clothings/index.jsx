@@ -62,8 +62,8 @@ export default function HomePage2() {
             <HotDeals products={products} />
             <div className="mb-3 mb-xl-5 pt-1 pb-4"></div>
             <CategoryBanner />
-            <div className="mb-3 mb-xl-5 pt-1 pb-4"></div>
-            <FeaturesProducts />
+            {/*<div className="mb-3 mb-xl-5 pt-1 pb-4"></div>
+            <FeaturesProducts />*/}
           </div>
           <div className="mb-3 mb-xl-5 pt-1 pb-4"></div>
         </main>{" "}

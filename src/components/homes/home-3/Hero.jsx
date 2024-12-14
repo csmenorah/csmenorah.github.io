@@ -129,7 +129,7 @@ export default function Hero() {
               Dresses
             </h2>
             <Link
-              to="/shop-1"
+              to="/female-clothings-shop"
               className="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7"
             >
               Shop Now

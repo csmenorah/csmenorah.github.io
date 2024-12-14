@@ -10,7 +10,7 @@ import TrendingProducts from "@/components/homes/home-7/TrendingProducts";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
-  title: "Home 4 || Brown Commerce",
+  title: " Children and Kid Brown Commerce",
   description: "Brown Commerce",
 };
 export default function HomePage4() {
@@ -21,8 +21,8 @@ export default function HomePage4() {
         <Header4 />
         <main className="bg-grey-faf9f8 page-wrapper-2" style={{ padding: 0 }}>
           <Hero />
-          <div className="mb-4 mb-xl-5 pt-1 pb-5"></div>
-          <TrendingProducts />
+          {/*<div className="mb-4 mb-xl-5 pt-1 pb-5"></div>
+          <TrendingProducts />*/}
           <div className="mb-4 mb-xl-5 pt-1 pb-5"></div>
           <ProductsGrid />
           <div className="mb-5 pb-4"></div>

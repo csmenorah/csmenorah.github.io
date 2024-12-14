@@ -23,29 +23,32 @@ export const slides1 = [
 export const slides2 = [
   {
     id: 1,
-    imageSrc: "/assets/images/home/demo2/slider1.jpg",
+    imageSrc:
+      "https://i.insider.com/631a420b0a329a0011e3880b?width=1200&format=jpeg",
     imageAlt: "Pattern",
     imageStyle: { objectPosition: "80% center" },
-    season: "Summer 2023",
-    title: "Hello New Season",
+    season: "Summer 2024",
+    title: "",
     discount: "Limited time offer - up to 60% off & free shipping",
   },
   {
     id: 2,
-    imageSrc: "/assets/images/home/demo2/slider2.jpg",
+    imageSrc:
+      "https://jadeblue.com/cdn/shop/articles/mens-formal-wear-checklist-for-2024.jpg?v=1722339867&width=1024",
     imageAlt: "Pattern",
     imageStyle: { objectPosition: "70% center" },
-    season: "Summer 2023",
-    title: "Hello New Season",
+    season: "Summer 2024",
+    title: "",
     discount: "Limited time offer - up to 60% off & free shipping",
   },
   {
     id: 3,
-    imageSrc: "/assets/images/home/demo2/slider3.jpg",
+    imageSrc:
+      "https://media.glamour.com/photos/66f5c2777e09bc43bcee2067/16:9/w_1280,c_limit/men%E2%80%99s%20fashion%20trends.jpg",
     imageAlt: "Pattern",
     imageStyle: { objectPosition: "70% center" },
-    season: "Summer 2023",
-    title: "Hello New Season",
+    season: "Summer 2024",
+    title: "",
     discount: "Limited time offer - up to 60% off & free shipping",
   },
 ];
@@ -188,71 +191,57 @@ export const slidesData = [
 export const slidesData2 = [
   {
     id: 1,
-    imgSrc: "/assets/images/home/demo7/slider1.jpg",
-    title: "New In",
+    imgSrc:
+      "https://bazaar.fashion.blog/wp-content/uploads/2018/09/boy-kids-fashion.png",
+    title: "",
     width: 475,
     height: 800,
   },
   {
     id: 2,
-    imgSrc: "/assets/images/home/demo7/slider2.jpg",
-    title: "Coats",
+    imgSrc:
+      "https://img.freepik.com/free-photo/portrait-cool-teenage-boy-wearing-hoodie_23-2149085833.jpg",
+    title: "",
     width: 475,
     height: 800,
   },
   {
     id: 3,
-    imgSrc: "/assets/images/home/demo7/slider3.jpg",
+    imgSrc:
+      "https://i5.walmartimages.com/seo/YUNICUS-Led-Shoes-for-Kids-Boy-s-Sneakers-Casual-Breathable-Sport-Led-Light-Up-Shoes-Little-Kid-10-5M-Blue-Orange_92b62af0-dc3d-4229-8208-6acf3dcec91e.c3eeb25c44ef2699e9d25be9083f1bf5.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
     title: "Shoes",
-    subMenuLinks: [
+    /*subMenuLinks: [
       { text: "Trainers", link: "/shop-1" },
       { text: "Sandals", link: "/shop-1" },
       { text: "Heel shoes", link: "/shop-1" },
       { text: "Flat shoes", link: "/shop-1" },
       { text: "Special prices", link: "/shop-1" },
-    ],
+    ],*/
     width: 475,
     height: 800,
   },
   {
     id: 4,
-    imgSrc: "/assets/images/home/demo7/slider4.jpg",
+    imgSrc:
+      "https://mixmax.pk/cdn/shop/articles/2024-kids-fashion-trends-embracing-sustainability-comfort-and-style-541209.jpg?v=1713775227",
     title: "Accessories",
-    width: 475,
-    height: 800,
-  },
-  {
-    id: 1,
-    imgSrc: "/assets/images/home/demo7/slider1.jpg",
-    title: "New In",
     width: 475,
     height: 800,
   },
   {
     id: 2,
-    imgSrc: "/assets/images/home/demo7/slider2.jpg",
+    imgSrc:
+      "https://5.imimg.com/data5/ECOM/Default/2023/6/317052059/NP/IQ/AZ/9422220/girls-winter-imitation-fur-coat-thick-fluff-warm-coat-children-baby-clothes-kids-fashion-709.jpg",
     title: "Coats",
     width: 475,
     height: 800,
   },
-  {
-    id: 3,
-    imgSrc: "/assets/images/home/demo7/slider3.jpg",
-    title: "Shoes",
-    subMenuLinks: [
-      { text: "Trainers", link: "/shop-1" },
-      { text: "Sandals", link: "/shop-1" },
-      { text: "Heel shoes", link: "/shop-1" },
-      { text: "Flat shoes", link: "/shop-1" },
-      { text: "Special prices", link: "/shop-1" },
-    ],
-    width: 475,
-    height: 800,
-  },
+
   {
     id: 4,
-    imgSrc: "/assets/images/home/demo7/slider4.jpg",
-    title: "Accessories",
+    imgSrc:
+      "https://hrd-live.cdn.scayle.cloud/images/94b99832595e303d0e2fcee3733e435f.jpg?brightness=1&width=960&height=1280&quality=75&bg=ffffff",
+    title: "Bag",
     width: 475,
     height: 800,
   },

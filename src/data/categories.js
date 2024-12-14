@@ -145,15 +145,19 @@ export const categories2 = [
 export const categoryBanners = [
   {
     id: 1,
-    imageUrl: "/assets/images/home/demo3/category_9.jpg",
+    imageUrl:
+      "https://i5.walmartimages.com/seo/Women-Blazers-Clearance-Casual-Lapel-Blazer-Lightweight-Office-Fall-Fashion-Slim-Fit-Long-Sleeve-Button-Front-Jackets-Todays-Deals_23f00fa4-04d2-4ac2-a9da-29565856adba.9db5f0056edf7ad6b0fddffbe4dc0fcd.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
     price: 19,
     category: "Blazers",
+    link: "/female-clothings-shop",
   },
   {
     id: 2,
-    imageUrl: "/assets/images/home/demo3/category_10.jpg",
+    imageUrl:
+      "https://www.ervingardosi.com/wp-content/uploads/2019/09/sports_wears_04.jpg",
     price: 19,
     category: "Sportswear",
+    link: "/sports-gear-shop",
   },
 ];
 

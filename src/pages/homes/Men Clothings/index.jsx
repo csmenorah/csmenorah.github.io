@@ -23,14 +23,15 @@ export default function HomePage3() {
         <main style={{ padding: 0 }}>
           <Hero />
           <div className="mb-3 mb-md-4 mb-xl-5 pb-2 pt-1"></div>
-          <GridBanner /> <div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
+          <GridBanner />
+          {/*<div className="mb-1 pb-4 mb-xl-5 pb-xl-5"></div>
           <Products />
           <div className="mb-1 pb-4"></div>
           <Categories />
           <div className="mb-4 pb-4 mb-xl-4 mt-xl-3 pt-xl-3 pb-xl-4"></div>
           <Banner />
           <div className="mb-4 pb-4 mb-xl-4 mt-xl-3 pt-xl-3 pb-xl-4"></div>
-          <Products2 />
+          <Products2 />*/}
           <div className="mb-4 pb-4 mb-xl-4 mt-xl-3 pt-xl-3 pb-xl-4"></div>
           <div className="mb-5 pb-4 pb-xl-5 mb-xl-5"></div>
           <Brands />

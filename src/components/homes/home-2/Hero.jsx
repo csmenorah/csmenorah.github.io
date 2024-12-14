@@ -50,7 +50,7 @@ export default function Hero() {
                   {elm.discount}
                 </p>
                 <button className="btn btn-outline-primary border-0 fs-base text-uppercase fw-medium animate animate_fade animate_btt animate_delay-7 btn-55">
-                  <Link to="/shop-1" className="text_dash_half">
+                  <Link to="/men-clothings-shop" className="text_dash_half">
                     Discover Now
                   </Link>
                 </button>

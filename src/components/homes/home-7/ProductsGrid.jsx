@@ -9,19 +9,17 @@ export default function ProductsGrid() {
           <div className="position-relative mb-4">
             <img
               loading="lazy"
-              src="/assets/images/home/demo7/product-banner.jpg"
+              src="https://www.shutterstock.com/image-photo/young-african-american-girl-wearing-600nw-2480391869.jpg"
               width="546"
               height="762"
               className="w-100 h-auto"
               alt="image"
             />
             <div className="content_abs content_top content_left content_bottom-lg content_left-lg">
-              <h2 className="fs-40 fw-normal text-uppercase mb-0 font-courgette">
-                Sportswear
-              </h2>
-              <p className="mb-4">Sale Upto 50% On New Coming</p>
+              <h2 className="fs-40 fw-normal text-uppercase mb-0 font-courgette"></h2>
+              <p className="mb-4"></p>
               <a className="btn btn-outline-primary border-0 fs-base text-uppercase fw-medium btn-55 d-inline-flex align-items-center">
-                <span>Discover Now</span>
+                <Link to="/children-clothings-shop">Discover More</Link>
               </a>
             </div>
           </div>
@@ -52,7 +50,7 @@ export default function ProductsGrid() {
                         </Link>
                       </h6>
                       <div className="product-card__price d-flex">
-                        <span className="money price">${elm.price}</span>
+                        <span className="money price">{elm.price}</span>
                       </div>
                     </div>
                   </div>

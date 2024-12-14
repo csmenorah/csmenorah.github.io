@@ -9,17 +9,31 @@ export default function GridBanner() {
             <img
               loading="lazy"
               className="w-100 h-auto"
-              src="/assets/images/home/demo2/grid_banner_1.jpg"
+              src="https://cdn.shopify.com/s/files/1/0336/4064/4740/files/3438d83064778f8d5cd09e9f9e4f8d06_1600x.jpg?v=1725365939"
               width="450"
               height="450"
               alt="image"
             />
-            <div className="content_abs content_center text-center">
-              <h3 className="text-uppercase fw-bold mb-1">New</h3>
-              <h3 className="text-uppercase fw-bold mb-1">Horizons</h3>
+            <div
+              className="content_abs content_center text-center"
+              style={{ color: "white" }}
+            >
+              <h3
+                className="text-uppercase fw-bold mb-1"
+                style={{ color: "white" }}
+              >
+                New
+              </h3>
+              <h3
+                className="text-uppercase fw-bold mb-1"
+                style={{ color: "white" }}
+              >
+                Horizons
+              </h3>
               <Link
-                to="/shop-1"
+                to="/men-clothings-shop"
                 className="btn-link default-underline text-uppercase fw-medium"
+                style={{ color: "white" }}
               >
                 Shop Now
               </Link>
@@ -33,16 +47,19 @@ export default function GridBanner() {
             <img
               loading="lazy"
               className="w-100 h-auto"
-              src="/assets/images/home/demo2/grid_banner_2.jpg"
+              src="https://ae-pic-a1.aliexpress-media.com/kf/Sc4e41f5347b243658ff8deec1a8fec09F/New-Stylish-Short-Sleeve-Casual-Printing-Cotton-Shirt-Men-Brand-Fashion-Comfortable-Top-Clothes-Camisa-Masculina.jpg_640x640Q90.jpg_.webp"
               width="450"
               height="450"
               alt="image"
             />
-            <div className="content_abs content_center text-center">
+            <div
+              className="content_abs content_center text-center"
+              style={{ color: "white" }}
+            >
               <h3 className="text-uppercase fw-bold mb-1">Summer</h3>
               <h3 className="text-uppercase fw-bold mb-1">Hats</h3>
               <Link
-                to="/shop-1"
+                to="/men-clothings-shop"
                 className="btn-link default-underline text-uppercase fw-medium"
               >
                 Shop Now
@@ -57,7 +74,7 @@ export default function GridBanner() {
             <img
               loading="lazy"
               className="w-100 h-auto"
-              src="/assets/images/home/demo2/grid_banner_3.jpg"
+              src="https://d1fufvy4xao6k9.cloudfront.net/images/blog/posts/2023/09/hockerty_spanish_man_spanish_style_linen_shirt_tailored_shorts__7d3f1677_aafe_4670_b641_e50b33b89334.jpg"
               width="450"
               height="450"
               alt="image"
@@ -71,7 +88,7 @@ export default function GridBanner() {
                 To 10% Off
               </h3>
               <Link
-                to="/shop-1"
+                to="/men-clothings-shop"
                 className="btn-link default-underline text-uppercase text-white fw-medium"
               >
                 See More
