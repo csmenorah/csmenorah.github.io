@@ -1,5 +1,5 @@
 import {
-  homePages,
+ //homePages,
   othersMenuItems,
   shopList,
   shopList2,
@@ -54,7 +54,7 @@ export default function Nav() {
   }, []);
   return (
     <>
-      <li className="navigation__item">
+      {/*<li className="navigation__item">
         <Link
           to="/"
           className={`navigation__link ${
@@ -64,7 +64,7 @@ export default function Nav() {
           Home
         </Link>
         <div className="box-menu" style={{ width: "800px" }}>
-          <div className="col pe-4">
+          {<div className="col pe-4">
             <ul className="sub-menu__list list-unstyled">
               {homePages.slice(0, 6).map((elm, i) => (
                 <li key={i} className="sub-menu__item">
@@ -79,7 +79,7 @@ export default function Nav() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div>}
 
           <div className="col pe-4">
             <ul className="sub-menu__list list-unstyled">
@@ -132,7 +132,16 @@ export default function Nav() {
             </ul>
           </div>
         </div>
-        {/* <!-- /.box-menu --> */}
+      </li>*/}
+      <li className="navigation__item">
+        <Link
+          to="/"
+          className={`navigation__link ${
+            pathname == "/" ? "menu-active" : ""
+          }`}
+        >
+          Home
+        </Link>
       </li>
       <li className="navigation__item">
         <a

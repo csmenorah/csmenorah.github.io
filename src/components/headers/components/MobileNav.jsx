@@ -156,6 +156,16 @@ export default function MobileNav() {
   return (
     <>
       <li className="navigation__item">
+        <Link
+          to="/"
+          className={`navigation__link ${
+            pathname == "/" ? "menu-active" : ""
+          }`}
+        >
+          Home
+        </Link>
+      </li>
+      {/*<li className="navigation__item">
         <a
           href="#"
           className={`navigation__link js-nav-right d-flex align-items-center ${
@@ -163,19 +173,11 @@ export default function MobileNav() {
           }`}
         >
           Home
-          <svg
-            className="ms-auto"
-            width="7"
-            height="11"
-            viewBox="0 0 7 11"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <use href="#icon_next_sm" />
-          </svg>
+          
         </a>
         <div className="sub-menu position-absolute top-0 start-100 w-100 d-none">
           <a
-            href="#"
+            href="/"
             className="navigation__link js-nav-left d-flex align-items-center border-bottom mb-2"
           >
             <svg
@@ -203,9 +205,8 @@ export default function MobileNav() {
               </li>
             ))}
           </ul>
-          {/* <!-- /.box-menu --> */}
         </div>
-      </li>
+      </li>*/}
       <li className="navigation__item">
         <a
           href="#"
@@ -267,16 +268,18 @@ export default function MobileNav() {
           About
         </Link>
       </li>
-      {!currentUserDetails.displayName && <li className="navigation__item">
-        <Link
-          to="/registration"
-          className={`navigation__link ${
-            pathname == "/about" ? "menu-active" : ""
-          }`}
-        >
-          Register
-        </Link>
-      </li>}
+      {!currentUserDetails.displayName && (
+        <li className="navigation__item">
+          <Link
+            to="/registration"
+            className={`navigation__link ${
+              pathname == "/about" ? "menu-active" : ""
+            }`}
+          >
+            Register
+          </Link>
+        </li>
+      )}
       {currentUserDetails.displayName && (
         <>
           <li className="navigation__item">
