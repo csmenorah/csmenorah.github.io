@@ -51,7 +51,7 @@ export default function CategoryBanner() {
                   <p className="text-uppercase mb-0">{elm.category}</p>
                   <h3 className="mb-2">{elm.title}</h3>
                   <Link
-                    to="/shop-1"
+                    to={elm.to}
                     className="btn-link default-underline text-uppercase fw-medium"
                   >
                     Shop Now

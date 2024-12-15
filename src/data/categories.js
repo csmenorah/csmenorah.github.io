@@ -170,30 +170,37 @@ export const gridBannerItems = [
     imgHeight: 450,
     category: "Basic Collection",
     title: "New Arrivals",
+    to: "/men-clothings-shop",
   },
   {
     id: 2,
-    imgSrc: "/assets/images/home/demo4/grid-banner-2.jpg",
+    imgSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo4%2Fgrid-banner-2.jpg&w=750&q=75",
     imgWidth: 690,
     imgHeight: 285,
     category: "Shop Casual",
     title: "Free Shipping",
+    to: "/female-clothings-shop",
   },
   {
     id: 3,
-    imgSrc: "/assets/images/home/demo4/grid-banner-3.jpg",
+    imgSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo4%2Fgrid-banner-3.jpg&w=750&q=75",
     imgWidth: 690,
     imgHeight: 285,
     category: "Want and Need",
     title: "The Everygirl Wears",
+    to: "/hand-bags-shop",
   },
   {
     id: 4,
-    imgSrc: "/assets/images/home/demo4/grid-banner-4.jpg",
+    imgSrc:
+      "https://contents.mediadecathlon.com/p2153238/k$9a4f86996c600587f11e68d096551306/men-s-running-shoes-jogflow-500k-1-navy-yellow-kalenji-8613295.jpg?f=1920x0&format=auto",
     imgWidth: 690,
     imgHeight: 450,
-    category: "Sale off This week",
+    category: "",
     title: "Running Shoes",
+    to: "/shoes-shop",
   },
 ];
 
@@ -201,88 +208,133 @@ export const categories3 = [
   {
     id: 1,
     name: "Handbags",
-    imgSrc: "/assets/images/home/demo5/category_1.png",
+    imgSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo5%2Fcategory_1.png&w=128&q=75",
+  },
+  {
+    id: 7,
+    name: "Jeans",
+    imgSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo5%2Fcategory_7.png&w=128&q=75",
   },
   {
     id: 2,
     name: "Clothings",
-    imgSrc: "/assets/images/home/demo5/category_2.png",
+    imgSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo5%2Fcategory_2.png&w=128&q=75",
   },
   {
     id: 3,
     name: "Jackets",
-    imgSrc: "/assets/images/home/demo5/category_3.png",
+    imgSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo5%2Fcategory_3.png&w=128&q=75",
   },
   {
     id: 4,
     name: "Watches",
-    imgSrc: "/assets/images/home/demo5/category_4.png",
+    imgSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo5%2Fcategory_4.png&w=128&q=75",
   },
   {
     id: 5,
     name: "Dresses",
-    imgSrc: "/assets/images/home/demo5/category_5.png",
+    imgSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo5%2Fcategory_5.png&w=128&q=75",
   },
-  { id: 6, name: "Shoes", imgSrc: "/assets/images/home/demo5/category_6.png" },
-  { id: 7, name: "Jeans", imgSrc: "/assets/images/home/demo5/category_7.png" },
-  { id: 8, name: "Shirts", imgSrc: "/assets/images/home/demo5/category_8.png" },
+  {
+    id: 6,
+    name: "Shoes",
+    imgSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo5%2Fcategory_6.png&w=128&q=75",
+  },
+  {
+    id: 8,
+    name: "Shirts",
+    imgSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo5%2Fcategory_8.png&w=128&q=75",
+  },
   {
     id: 1,
     name: "Handbags",
-    imgSrc: "/assets/images/home/demo5/category_1.png",
+    imgSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo5%2Fcategory_1.png&w=128&q=75",
+  },
+  {
+    id: 7,
+    name: "Jeans",
+    imgSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo5%2Fcategory_7.png&w=128&q=75",
   },
   {
     id: 2,
     name: "Clothings",
-    imgSrc: "/assets/images/home/demo5/category_2.png",
+    imgSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo5%2Fcategory_2.png&w=128&q=75",
   },
   {
     id: 3,
     name: "Jackets",
-    imgSrc: "/assets/images/home/demo5/category_3.png",
+    imgSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo5%2Fcategory_3.png&w=128&q=75",
   },
   {
     id: 4,
     name: "Watches",
-    imgSrc: "/assets/images/home/demo5/category_4.png",
+    imgSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo5%2Fcategory_4.png&w=128&q=75",
   },
   {
     id: 5,
     name: "Dresses",
-    imgSrc: "/assets/images/home/demo5/category_5.png",
+    imgSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo5%2Fcategory_5.png&w=128&q=75",
   },
-  { id: 6, name: "Shoes", imgSrc: "/assets/images/home/demo5/category_6.png" },
-  { id: 7, name: "Jeans", imgSrc: "/assets/images/home/demo5/category_7.png" },
-  { id: 8, name: "Shirts", imgSrc: "/assets/images/home/demo5/category_8.png" },
+  {
+    id: 6,
+    name: "Shoes",
+    imgSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo5%2Fcategory_6.png&w=128&q=75",
+  },
+  {
+    id: 8,
+    name: "Shirts",
+    imgSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fhome%2Fdemo5%2Fcategory_8.png&w=128&q=75",
+  },
 ];
 export const collectionsData = [
   {
     id: 1,
-    imageSrc: "/assets/images/home/demo9/collection_grid_1.jpg",
+    imageSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/assets/images/home/demo9/collection_grid_1.jpg",
     title: "Furniture",
     productCount: "954 Products",
   },
   {
     id: 2,
-    imageSrc: "/assets/images/home/demo9/collection_grid_2.jpg",
+    imageSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/assets/images/home/demo9/collection_grid_2.jpg",
     title: "Clocks",
     productCount: "710 Products",
   },
   {
     id: 3,
-    imageSrc: "/assets/images/home/demo9/collection_grid_3.jpg",
+    imageSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/assets/images/home/demo9/collection_grid_3.jpg",
     title: "Accessories",
     productCount: "954 Products",
   },
   {
     id: 4,
-    imageSrc: "/assets/images/home/demo9/collection_grid_4.jpg",
+    imageSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/assets/images/home/demo9/collection_grid_4.jpg",
     title: "Lighting",
     productCount: "184 Products",
   },
   {
     id: 5,
-    imageSrc: "/assets/images/home/demo9/collection_grid_5.jpg",
+    imageSrc:
+      "https://uomo-nextjs-ecommerce.vercel.app/assets/images/home/demo9/collection_grid_5.jpg",
     title: "Toys",
     productCount: "245 Products",
   },

@@ -21,7 +21,7 @@ export const homePages = [
   { id: 9, title: "Kids Toys", href: "/kids-toys-display"},
   { id: 11, title: "Video Games", href: "/video-games-display"},
   { id: 15, title: "Kitchen Utensils", href: "/kitchen-utensils-display"},
-  { id: 24, title: "House Whole Funitures", href: "/house-whole-funitures-display"},
+  { id: 24, title: "Interior Design", href: "/house-whole-funitures-display"},
   { id: 25, title: "Home Tools", href: "/house-whole-assistive-tools"},
 ];
 
@@ -146,7 +146,7 @@ export const shopList3 = [
   {
     id: 3,
     href: "/house-whole-funitures-shop",
-    title: "Visit House Whole Funitures",
+    title: "Visit Interior Design",
   },
 ];
 
